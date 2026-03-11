@@ -277,7 +277,7 @@
     .modal-subtitle {
       margin: 0;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 0.85rem;
       text-align: left;
       flex: 1;
     }
@@ -333,23 +333,23 @@
 
     .modal-button {
       display: inline-block;
-      padding: 8px 24px;
-      background: linear-gradient(135deg, var(--card-a), var(--card-b));
+      padding: 6px 20px;
+      background: #007AFF;
       color: white;
       text-align: center;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
       transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      box-shadow: none;
       align-self: flex-start;
+      letter-spacing: -0.2px;
     }
 
     .modal-button:hover {
-      background: linear-gradient(135deg, var(--card-a-hover), var(--card-b-hover));
-      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-      transform: translateY(-2px);
+      background: #0051D5;
+      transform: scale(1.02);
     }
 
     @keyframes fadeIn {
@@ -405,13 +405,20 @@
       </a>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-users"></i>CRM</div>
+    <div class="section-title"><i class="fa-solid fa-users"></i>Customer Relation Management</div>
     <div class="links">
       <a href="#" class="link link-orange" onclick="openModal('modal4'); return false;">
         <img src="icons/app4-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
-          <div class="link-name">CRM System</div>
-          <div class="link-description">Customer Relationship Management</div>
+          <div class="link-name">BIO CRM</div>
+          <div class="link-description">ระบบจัดการรายงานฝ่ายขาย บริษัท ไบโอ อินโน เทค</div>
+        </div>
+      </a>
+      <a href="#" class="link link-orange" onclick="openModal('modal5'); return false;">
+        <img src="icons/app5-icon.png" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">BIO TH CRM</div>
+          <div class="link-description">ระบบจัดการรายงานฝ่ายขาย บริษัท ไบโอ อินโน เทค ไทยแลนด์</div>
         </div>
       </a>
     </div>
@@ -505,21 +512,48 @@
       <div class="modal-header">
         <img src="icons/app4-icon.png" alt="App Icon" class="modal-icon">
         <div class="modal-header-text">
-          <h2>CRM System</h2>
-          <p class="modal-subtitle">Customer Relationship Management</p>
+          <h2>BIO CRM</h2>
+          <p class="modal-subtitle">ระบบจัดการรายงานฝ่ายขาย บริษัท ไบโอ อินโน เทค</p>
           <a href="#" class="modal-button">Open App</a>
         </div>
       </div>
       <div class="modal-body">
         <p class="modal-description">
-          ระบบบริหารจัดการลูกค้าสัมพันธ์ (CRM) ช่วยในการจัดการข้อมูลลูกค้า ติดตามการขาย 
-          และสร้างความสัมพันธ์ที่ดีกับลูกค้าอย่างมีประสิทธิภาพ
+          ระบบบริหารจัดการลูกค้าสัมพันธ์และรายงานฝ่ายขายสำหรับบริษัท ไบโอ อินโน เทค จำกัด 
+          ช่วยในการจัดการข้อมูลลูกค้า ติดตามการขาย และสร้างความสัมพันธ์ที่ดีกับลูกค้าอย่างมีประสิทธิภาพ
         </p>
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/app4-screenshot1.png" alt="Screenshot 1" class="screenshot">
           <img src="screenshots/app4-screenshot2.png" alt="Screenshot 2" class="screenshot">
           <img src="screenshots/app4-screenshot3.png" alt="Screenshot 3" class="screenshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/app5-icon.png" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>BIO TH CRM</h2>
+          <p class="modal-subtitle">ระบบจัดการรายงานฝ่ายขาย บริษัท ไบโอ อินโน เทค ไทยแลนด์</p>
+          <a href="#" class="modal-button">Open App</a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการลูกค้าสัมพันธ์และรายงานฝ่ายขายสำหรับบริษัท ไบโอ อินโน เทค (ไทยแลนด์) จำกัด 
+          ช่วยในการจัดการข้อมูลลูกค้า ติดตามการขาย และสร้างความสัมพันธ์ที่ดีกับลูกค้าอย่างมีประสิทธิภาพ
+        </p>
+        <h3>Screenshots</h3>
+        <div class="screenshot-container">
+          <img src="screenshots/app5-screenshot1.png" alt="Screenshot 1" class="screenshot">
+          <img src="screenshots/app5-screenshot2.png" alt="Screenshot 2" class="screenshot">
+          <img src="screenshots/app5-screenshot3.png" alt="Screenshot 3" class="screenshot">
         </div>
       </div>
     </div>
