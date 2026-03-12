@@ -812,20 +812,20 @@
       display: none;
     }
 
-    [data-theme="light"] .theme-icon.sun,
-    [data-theme="dark"] .theme-icon.moon {
+    [data-theme="light"] .theme-icon.moon,
+    [data-theme="dark"] .theme-icon.sun {
       display: block;
     }
 
-    :root:not([data-theme]) .theme-icon.sun {
+    :root:not([data-theme]) .theme-icon.moon {
       display: block;
     }
 
     @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) .theme-icon.sun {
+      :root:not([data-theme]) .theme-icon.moon {
         display: none;
       }
-      :root:not([data-theme]) .theme-icon.moon {
+      :root:not([data-theme]) .theme-icon.sun {
         display: block;
       }
     }
@@ -842,6 +842,17 @@
     <img src="https://bioinnotechthailand.com/link/logo.png" alt="Logo" class="logo" />
     <h1>BIO THAILAND GROUP<br>Application Portal</h1>
     <p class="lead">ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์</p>
+
+    <div class="section-title"><i class="fa-solid fa-globe"></i>General</div>
+    <div class="links">
+      <a href="#" class="link" onclick="openModal('modal9'); return false;">
+        <img src="icons/webmail-icon.png" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Webmail</div>
+          <div class="link-description">ระบบอีเมลองค์กร</div>
+        </div>
+      </a>
+    </div>
 
     <div class="section-title"><i class="fa-solid fa-boxes-stacked"></i>Stock and Inventory</div>
     <div class="links">
@@ -946,6 +957,35 @@
           <img src="screenshots/bio-ivm/S__4325390_0.jpg" alt="Screenshot 1" class="screenshot">
           <img src="screenshots/bio-ivm/S__4325391_0.jpg" alt="Screenshot 2" class="screenshot">
           <img src="screenshots/bio-ivm/S__4325392_0.jpg" alt="Screenshot 3" class="screenshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 - Webmail -->
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal9')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/webmail-icon.png" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Webmail</h2>
+          <p class="modal-subtitle">Corporate Email System</p>
+          <a href="http://webmail.bioinnotech.co.th/" class="modal-button">Open App</a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบอีเมลองค์กรสำหรับพนักงานกลุ่มบริษัท ไบโอ ไทยแลนด์ 
+          ช่วยในการสื่อสารภายในองค์กร จัดการอีเมล และเข้าถึงข้อมูลได้ทุกที่ทุกเวลา
+        </p>
+        <h3>Screenshots</h3>
+        <div class="screenshot-container">
+          <img src="screenshots/web-mail/S__4325473_0.jpg" alt="Screenshot 1" class="screenshot">
+          <img src="screenshots/web-mail/S__4325474_0.jpg" alt="Screenshot 2" class="screenshot">
+          <img src="screenshots/web-mail/S__4325475_0.jpg" alt="Screenshot 3" class="screenshot">
+          <img src="screenshots/web-mail/S__4325476_0.jpg" alt="Screenshot 4" class="screenshot">
+          <img src="screenshots/web-mail/S__4325477.jpg" alt="Screenshot 5" class="screenshot">
         </div>
       </div>
     </div>
