@@ -176,6 +176,11 @@
       color: var(--txt);
     }
 
+    .section-title i {
+      color: var(--txt);
+      font-size: 1rem;
+    }
+
     .links {
       display: grid;
       gap: 16px;
@@ -295,6 +300,17 @@
       width: fit-content;
     }
 
+    .thirdparty-badge {
+      display: inline-block;
+      background: #34A853;
+      color: white;
+      font-size: 0.65rem;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      width: fit-content;
+    }
+
     /* Floating Help Button */
     .help-button {
       position: fixed;
@@ -310,7 +326,7 @@
       box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
       cursor: pointer;
       transition: all 0.3s ease;
-      z-index: 1000;
+      z-index: 1001;
       border: none;
       color: white;
       font-weight: 600;
@@ -335,15 +351,28 @@
       right: 30px;
       background: var(--modal-bg);
       padding: 24px;
-      border-radius: 16px;
+      border-radius: 20px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
       max-width: 340px;
       display: none;
       opacity: 0;
-      z-index: 999;
+      z-index: 1001;
       border: 1px solid var(--card-border);
       transform: translateY(10px);
       transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .help-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 40px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid var(--modal-bg);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
     }
 
     .help-tooltip.show {
@@ -351,6 +380,26 @@
       opacity: 1;
       transform: translateY(0);
       animation: fadeInTooltip 0.3s ease forwards;
+    }
+    
+    .help-tooltip-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .help-tooltip-overlay.show {
+      display: block;
+      opacity: 1;
     }
     
     @keyframes fadeInTooltip {
@@ -370,7 +419,9 @@
       gap: 12px;
       margin-bottom: 16px;
       padding-bottom: 16px;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid var(--card-border);
+      justify-content: space-between;
+      position: relative;
     }
 
     .help-tooltip h3 {
@@ -398,15 +449,15 @@
     }
 
     .help-tooltip-close {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #f5f5f5;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: transparent;
       border: none;
-      color: var(--muted);
-      font-size: 18px;
+      color: var(--txt);
+      font-size: 28px;
       cursor: pointer;
-      padding: 6px;
+      padding: 0;
       line-height: 1;
       border-radius: 6px;
       width: 28px;
@@ -415,11 +466,13 @@
       align-items: center;
       justify-content: center;
       transition: all 0.2s;
+      font-weight: 300;
+      flex-shrink: 0;
     }
 
     .help-tooltip-close:hover {
-      background: #e0e0e0;
-      color: var(--txt);
+      color: var(--muted);
+      transform: scale(1.1);
     }
 
     .store-buttons {
@@ -434,21 +487,21 @@
       align-items: center;
       gap: 12px;
       padding: 12px 16px;
-      background: #000;
-      color: white;
+      background: white;
+      color: #000;
       text-decoration: none;
       border-radius: 12px;
       font-size: 0.85rem;
       font-weight: 600;
       transition: all 0.2s;
-      border: 1px solid #000;
+      border: 1px solid #e0e0e0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.08);
       flex: 1;
     }
 
     .store-button:hover {
-      background: #333;
-      border-color: #333;
+      background: #f8f9fa;
+      border-color: #d0d0d0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.12);
       transform: translateY(-1px);
     }
@@ -461,11 +514,11 @@
     .store-button i {
       font-size: 24px;
       flex-shrink: 0;
-      color: white;
+      color: #000;
     }
 
     .store-button.app-store i {
-      color: white;
+      color: #000;
     }
 
     .store-button.play-store i {
@@ -484,13 +537,13 @@
 
     .store-button-label {
       font-size: 0.7rem;
-      color: rgba(255,255,255,0.8);
+      color: #666;
       font-weight: 400;
     }
 
     .store-button-name {
       font-size: 0.9rem;
-      color: white;
+      color: #000;
       font-weight: 600;
     }
 
@@ -510,7 +563,9 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: var(--modal-overlay);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       animation: fadeIn 0.3s ease;
     }
 
@@ -727,43 +782,41 @@
       font-size: 0.9rem;
       color: var(--txt);
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .contact-info h4 i {
-      color: #4285F4;
-      font-size: 16px;
+      text-align: left;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      padding: 8px 12px;
-      background: #f8f9fa;
+      gap: 6px;
+      margin-bottom: 8px;
+      padding: 10px 12px;
+      background: transparent;
       border-radius: 8px;
       transition: all 0.2s;
+      border: 1px solid #d0d0d0;
     }
 
     .contact-item:hover {
-      background: #e8f0fe;
+      background: var(--card-bg);
+      border-color: #4285F4;
     }
 
     .contact-item i {
-      width: 18px;
+      min-width: 20px;
       color: #4285F4;
-      font-size: 14px;
+      font-size: 15px;
       flex-shrink: 0;
+      text-align: center;
     }
 
     .contact-item a {
       color: var(--txt);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       flex: 1;
+      font-weight: 400;
+      line-height: 1.5;
     }
 
     .contact-item a:hover {
@@ -850,11 +903,12 @@
         <div class="link-content">
           <div class="link-name">Webmail</div>
           <div class="link-description">ระบบอีเมลองค์กร</div>
+          <span class="thirdparty-badge">3rd Party</span>
         </div>
       </a>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-boxes-stacked"></i>Stock and Inventory</div>
+    <div class="section-title"><i class="fa-solid fa-warehouse"></i>Stock and Inventory</div>
     <div class="links">
       <a href="#" class="link" onclick="openModal('modal1'); return false;">
         <img src="icons/app1-icon.png" alt="App Icon" class="link-icon">
@@ -882,7 +936,7 @@
       </a>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-users"></i>Customer Relation Management</div>
+    <div class="section-title"><i class="fa-solid fa-handshake"></i>Customer Relation Management</div>
     <div class="links">
       <a href="#" class="link link-orange" onclick="openModal('modal4'); return false;">
         <img src="icons/app4-icon.png" alt="App Icon" class="link-icon">
@@ -944,7 +998,7 @@
         <div class="modal-header-text">
           <h2>BIO IVM</h2>
           <p class="modal-subtitle">บริษัท ไบโอ อินโน เทค จำกัด</p>
-          <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" class="modal-button">Open App</a>
+          <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -971,7 +1025,7 @@
         <div class="modal-header-text">
           <h2>Webmail</h2>
           <p class="modal-subtitle">Corporate Email System</p>
-          <a href="http://webmail.bioinnotech.co.th/" class="modal-button">Open App</a>
+          <a href="http://webmail.bioinnotech.co.th/" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1000,7 +1054,7 @@
         <div class="modal-header-text">
           <h2>BIO TH IVM</h2>
           <p class="modal-subtitle">บริษัท ไบโอ อินโน เทค (ไทยแลนด์) จำกัด</p>
-          <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" class="modal-button">Open App</a>
+          <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1027,7 +1081,7 @@
         <div class="modal-header-text">
           <h2>BIO Green World IVM</h2>
           <p class="modal-subtitle">บริษัท ไบโอ กรีน เวิลด์ จำกัด</p>
-          <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" class="modal-button">Open App</a>
+          <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1056,7 +1110,7 @@
         <div class="modal-header-text">
           <h2>BIO CRM</h2>
           <p class="modal-subtitle">บริษัท ไบโอ อินโน เทค จำกัด</p>
-          <a href="https://www.appsheet.com/newshortcut/8697793c-ef88-41a1-abc7-b5f92c3d0783" class="modal-button">Open App</a>
+          <a href="https://www.appsheet.com/newshortcut/8697793c-ef88-41a1-abc7-b5f92c3d0783" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1084,7 +1138,7 @@
         <div class="modal-header-text">
           <h2>BIO TH CRM</h2>
           <p class="modal-subtitle">บริษัท ไบโอ อินโน เทค (ไทยแลนด์) จำกัด</p>
-          <a href="https://www.appsheet.com/newshortcut/656f9789-354a-48e9-8c85-1f40978b995a" class="modal-button">Open App</a>
+          <a href="https://www.appsheet.com/newshortcut/656f9789-354a-48e9-8c85-1f40978b995a" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1112,7 +1166,7 @@
         <div class="modal-header-text">
           <h2>NMS Uptime Kuma</h2>
           <p class="modal-subtitle">Network Monitoring System</p>
-          <a href="https://nms.bioinnotech.co.th" class="modal-button">Open App</a>
+          <a href="https://nms.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1140,7 +1194,7 @@
         <div class="modal-header-text">
           <h2>Speedtest Tracker</h2>
           <p class="modal-subtitle">Internet Speed Monitoring</p>
-          <a href="https://speedtest.bioinnotech.co.th" class="modal-button">Open App</a>
+          <a href="https://speedtest.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1167,7 +1221,7 @@
         <div class="modal-header-text">
           <h2>ERP NEXT</h2>
           <p class="modal-subtitle">Enterprise Resource Planning</p>
-          <a href="https://next.bioinnotech.co.th" class="modal-button">Open App</a>
+          <a href="https://next.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
       <div class="modal-body">
@@ -1200,11 +1254,14 @@
     <span>ช่วยเหลือ</span>
   </div>
 
+  <!-- Help Tooltip Overlay -->
+  <div class="help-tooltip-overlay" id="helpTooltipOverlay" onclick="toggleHelp()"></div>
+
   <!-- Help Tooltip -->
   <div class="help-tooltip" id="helpTooltip">
-    <button class="help-tooltip-close" onclick="toggleHelp()">&times;</button>
     <div class="help-tooltip-header">
       <h3>วิธีการใช้งาน</h3>
+      <button class="help-tooltip-close" onclick="toggleHelp()">&times;</button>
     </div>
     <p>แอปที่มีป้าย <span style="color: #4285F4; font-weight: 600;">AppSheet</span> จำเป็นต้องติดตั้งแอป AppSheet ในอุปกรณ์ของคุณก่อน และคุณต้องได้รับการมอบหมายสิทธิ์จากผู้ดูแลระบบเพื่อเข้าสู่ระบบด้วยบัญชี Google ของคุณ</p>
     <div class="store-buttons">
@@ -1224,7 +1281,7 @@
       </a>
     </div>
     <div class="contact-info">
-      <h4><i class="fa-solid fa-headset"></i> ติดต่อสอบถาม</h4>
+      <h4>ติดต่อสอบถาม</h4>
       <div class="contact-item">
         <i class="fa-solid fa-phone"></i>
         <a href="tel:0969267701">096-926-7701</a>
@@ -1267,7 +1324,9 @@
 
     function toggleHelp() {
       const tooltip = document.getElementById('helpTooltip');
+      const overlay = document.getElementById('helpTooltipOverlay');
       tooltip.classList.toggle('show');
+      overlay.classList.toggle('show');
     }
 
     // Close modal when clicking outside
@@ -1277,8 +1336,9 @@
         document.body.style.overflow = 'auto';
       }
       // Close help tooltip when clicking outside
-      if (!event.target.closest('.help-button') && !event.target.closest('.help-tooltip')) {
+      if (!event.target.closest('.help-button') && !event.target.closest('.help-tooltip') && !event.target.closest('.help-tooltip-overlay')) {
         document.getElementById('helpTooltip').classList.remove('show');
+        document.getElementById('helpTooltipOverlay').classList.remove('show');
       }
     }
   </script>
