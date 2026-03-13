@@ -627,26 +627,6 @@
       text-align: left;
     }
 
-    .modal-header::after {
-      content: '';
-      position: absolute;
-      left: 30px;
-      right: 30px;
-      bottom: 0;
-      height: 1px;
-      background: #eee;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .modal-header::after {
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-
-    [data-theme="dark"] .modal-header::after {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
     .modal-icon {
       width: 120px;
       height: 120px;
@@ -694,15 +674,38 @@
       font-size: 1rem;
       line-height: 1.6;
       color: var(--txt);
-      margin-bottom: 20px;
+      margin-bottom: 0;
       text-align: left;
+      padding-bottom: 20px;
     }
 
     .modal-body h3 {
       font-size: 1.3rem;
-      margin: 30px 0 15px 0;
+      margin: 20px 0 15px 0;
       color: var(--txt);
       text-align: left;
+    }
+
+    .modal-separator {
+      border: none;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .modal-separator {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    [data-theme="dark"] .modal-separator {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] .modal-separator {
+      background: rgba(0, 0, 0, 0.1);
     }
 
     .screenshot-container {
@@ -1006,11 +1009,15 @@
           <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบจัดการคลังสินค้าสำหรับบริษัท ไบโอ อินโน เทค จำกัด ช่วยในการบริหารจัดการสินค้าคงคลัง 
           ติดตามสต็อกสินค้า และจัดการการเข้า-ออกสินค้าอย่างมีประสิทธิภาพ
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/bio-ivm/S__4325390_0.jpg" alt="Screenshot 1" class="screenshot">
@@ -1033,11 +1040,15 @@
           <a href="http://webmail.bioinnotech.co.th/" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบอีเมลองค์กรสำหรับพนักงานกลุ่มบริษัท ไบโอ ไทยแลนด์ 
           ช่วยในการสื่อสารภายในองค์กร จัดการอีเมล และเข้าถึงข้อมูลได้ทุกที่ทุกเวลา
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/web-mail/S__4325473_0.jpg" alt="Screenshot 1" class="screenshot">
@@ -1062,11 +1073,15 @@
           <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบจัดการคลังสินค้าโรงงานสำหรับบริษัท ไบโอ อินโน เทค (ไทยแลนด์) จำกัด 
           ช่วยในการบริหารจัดการสินค้าคงคลังในโรงงาน ติดตามสต็อกสินค้า และจัดการการเข้า-ออกสินค้าอย่างมีประสิทธิภาพ
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots\bio-th-ivm\app2-screenshot1.jpg" alt="Screenshot 1" class="screenshot">
@@ -1089,11 +1104,15 @@
           <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบจัดการคลังสินค้าสำหรับบริษัท ไบโอ กรีน เวิลด์ 
           ช่วยในการบริหารจัดการสินค้าคงคลัง ติดตามสต็อกสินค้า และจัดการการเข้า-ออกสินค้าอย่างมีประสิทธิภาพ
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/bio-green-world/S__4325406_0.png" alt="Screenshot 1" class="screenshot">
@@ -1118,11 +1137,15 @@
           <a href="https://www.appsheet.com/newshortcut/8697793c-ef88-41a1-abc7-b5f92c3d0783" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบบริหารจัดการลูกค้าสัมพันธ์และรายงานฝ่ายขายสำหรับบริษัท ไบโอ อินโน เทค จำกัด 
           ช่วยในการจัดการข้อมูลลูกค้า ติดตามการขาย และสร้างความสัมพันธ์ที่ดีกับลูกค้าอย่างมีประสิทธิภาพ
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/bio-crm/S__4325401_0.png" alt="Screenshot 1" class="screenshot">
@@ -1146,11 +1169,15 @@
           <a href="https://www.appsheet.com/newshortcut/656f9789-354a-48e9-8c85-1f40978b995a" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบบริหารจัดการลูกค้าสัมพันธ์และรายงานฝ่ายขายสำหรับบริษัท ไบโอ อินโน เทค (ไทยแลนด์) จำกัด 
           ช่วยในการจัดการข้อมูลลูกค้า ติดตามการขาย และสร้างความสัมพันธ์ที่ดีกับลูกค้าอย่างมีประสิทธิภาพ
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/bio-th-crm/S__4325396_0.jpg" alt="Screenshot 1" class="screenshot">
@@ -1174,11 +1201,15 @@
           <a href="https://nms.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย ช่วยในการติดตามความพร้อมใช้งานของระบบ 
           แจ้งเตือนเมื่อเกิดปัญหา และสร้างรายงานสถิติการทำงานของเซิร์ฟเวอร์
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/nms-uptime-kuma/S__4325424_0.jpg" alt="Screenshot 1" class="screenshot">
@@ -1202,11 +1233,15 @@
           <a href="https://speedtest.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบติดตามและบันทึกความเร็วอินเทอร์เน็ต ช่วยในการวิเคราะห์คุณภาพการเชื่อมต่อ 
           สร้างกราฟแสดงประวัติความเร็ว และตรวจสอบประสิทธิภาพของเครือข่าย
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/speedtest-tracker/S__4325429_0.jpg" alt="Screenshot 1" class="screenshot">
@@ -1229,11 +1264,15 @@
           <a href="https://next.bioinnotech.co.th" class="modal-button">Open</a>
         </div>
       </div>
+      <hr class="modal-separator">
       <div class="modal-body">
         <p class="modal-description">
           ระบบบริหารจัดการทรัพยากรองค์กรแบบครบวงจร ช่วยในการจัดการการผลิต การเงิน การขาย 
           การจัดซื้อ และทรัพยากรบุคคล เพื่อเพิ่มประสิทธิภาพการดำเนินงานขององค์กร
         </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
         <h3>Screenshots</h3>
         <div class="screenshot-container">
           <img src="screenshots/erp-next/S__4325434_0.jpg" alt="Screenshot 1" class="screenshot">
