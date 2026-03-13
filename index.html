@@ -8,15 +8,16 @@
   <link rel="apple-touch-icon" href="icons/fav.png" />
   <link rel="shortcut icon" href="icons/fav.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
   <script>
     // Load saved theme immediately to prevent flash
     (function() {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        // Default to light mode on first load
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
@@ -119,7 +120,7 @@
     }
     
     body {
-      font-family: 'IBM Plex Sans Thai', sans-serif;
+      font-family: 'Noto Sans Thai', sans-serif;
       margin: 0;
       padding: 0 14px;
       background: transparent;
@@ -497,6 +498,7 @@
       border: 1px solid #e0e0e0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.08);
       flex: 1;
+      white-space: nowrap;
     }
 
     .store-button:hover {
@@ -533,18 +535,21 @@
       flex-direction: column;
       align-items: flex-start;
       flex: 1;
+      min-width: 0;
     }
 
     .store-button-label {
       font-size: 0.7rem;
       color: #666;
       font-weight: 400;
+      white-space: nowrap;
     }
 
     .store-button-name {
       font-size: 0.9rem;
       color: #000;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     footer {
