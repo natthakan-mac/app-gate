@@ -246,10 +246,10 @@
     }
 
     .link-icon {
-      width: 64px;
-      height: 64px;
+      width: 52px;
+      height: 52px;
       border-radius: 12px;
-      background: #fff;
+      background: transparent;
       flex-shrink: 0;
       object-fit: cover;
     }
@@ -260,7 +260,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 64px;
+      height: 52px;
     }
 
     .link-name {
@@ -506,6 +506,33 @@
       border-color: #d0d0d0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.12);
       transform: translateY(-1px);
+    }
+
+    [data-theme="dark"] .store-button {
+      background: #000;
+      color: #fff;
+      border-color: #333;
+    }
+
+    [data-theme="dark"] .store-button:hover {
+      background: #1a1a1a;
+      border-color: #444;
+    }
+
+    [data-theme="dark"] .store-button i {
+      color: #fff;
+    }
+
+    [data-theme="dark"] .store-button.app-store i {
+      color: #fff;
+    }
+
+    [data-theme="dark"] .store-button-label {
+      color: #999;
+    }
+
+    [data-theme="dark"] .store-button-name {
+      color: #fff;
     }
 
     .store-button:active {
