@@ -23,7 +23,6 @@ A modern, minimal web portal for BIO Thailand Group's application ecosystem. Bui
 
 ### Customer Relation Management
 - **BIO CRM** - Sales reporting system for BIO Inno Tech
-- **BIO TH CRM** - Sales reporting system for BIO Inno Tech (Thailand)
 
 ### IT
 - **NMS Uptime Kuma** - Network monitoring system
