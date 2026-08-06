@@ -415,16 +415,17 @@
     .container .links:nth-of-type(2) .link:nth-child(1) { animation-delay: 0.15s; }
     .container .links:nth-of-type(2) .link:nth-child(2) { animation-delay: 0.20s; }
     .container .links:nth-of-type(2) .link:nth-child(3) { animation-delay: 0.25s; }
+    .container .links:nth-of-type(2) .link:nth-child(4) { animation-delay: 0.30s; }
 
-    .container .links:nth-of-type(3) .link:nth-child(1) { animation-delay: 0.30s; }
-    .container .links:nth-of-type(3) .link:nth-child(2) { animation-delay: 0.35s; }
+    .container .links:nth-of-type(3) .link:nth-child(1) { animation-delay: 0.35s; }
+    .container .links:nth-of-type(3) .link:nth-child(2) { animation-delay: 0.40s; }
 
-    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.40s; }
-    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.45s; }
+    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.45s; }
+    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.50s; }
 
-    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.50s; }
-    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.55s; }
-    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.60s; }
+    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.55s; }
+    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.60s; }
+    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.65s; }
 
     .card-open-btn {
       padding: 5px 18px;
@@ -504,6 +505,30 @@
       background: transparent;
       flex-shrink: 0;
       object-fit: cover;
+    }
+
+    .bio-ams-icon {
+      background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 50%, #0284c7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+      flex-shrink: 0;
+    }
+
+    .bio-ams-icon.link-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      font-size: 24px;
+    }
+
+    .bio-ams-icon.modal-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      font-size: 54px;
     }
 
     .link-content {
@@ -1403,6 +1428,18 @@
         <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" target="_blank" rel="noopener noreferrer"
           class="card-open-btn" onclick="event.stopPropagation();">Open</a>
       </div>
+      <div class="link" onclick="openModal('modal14')">
+        <div class="bio-ams-icon link-icon">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-name">BIO AMS</div>
+          <div class="link-description">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
+          <span class="webapp-badge">Web App</span>
+        </div>
+        <a href="https://bio-asset-management.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
     </div>
 
     <div class="section-title"><i class="fa-solid fa-handshake"></i>Customer Relation Management</div>
@@ -1879,6 +1916,42 @@
           <img src="screenshots/water-plant-maintenance/S__8765457_0.jpg" alt="Screenshot 4" class="screenshot">
           <img src="screenshots/water-plant-maintenance/S__8765458_0.jpg" alt="Screenshot 5" class="screenshot">
           <img src="screenshots/water-plant-maintenance/S__8765459_0.jpg" alt="Screenshot 6" class="screenshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 14 - BIO AMS -->
+  <div id="modal14" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal14')">&times;</span>
+      <div class="modal-header">
+        <div class="bio-ams-icon modal-icon">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+        <div class="modal-header-text">
+          <h2>BIO AMS</h2>
+          <p class="modal-subtitle">Enterprise Asset Management System</p>
+          <a href="https://bio-asset-management.web.app/" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการทรัพย์สินองค์กร (BIO Asset Management System) สำหรับบริหารและติดตามทรัพย์สินขององค์กร
+          ติดตามสถานะการใช้งาน การแจ้งซ่อม การจัดส่ง และการตัดจำหน่ายทรัพย์สินอย่างเป็นระบบ
+        </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
+        <h3>Screenshots</h3>
+        <div class="screenshot-container">
+          <img src="screenshots/bio-asset-management/S__11468806_0.jpg" alt="Screenshot 1" class="screenshot">
+          <img src="screenshots/bio-asset-management/S__11468807_0.jpg" alt="Screenshot 2" class="screenshot">
+          <img src="screenshots/bio-asset-management/S__11468808_0.jpg" alt="Screenshot 3" class="screenshot">
+          <img src="screenshots/bio-asset-management/S__11468809_0.jpg" alt="Screenshot 4" class="screenshot">
+          <img src="screenshots/bio-asset-management/S__11468810_0.jpg" alt="Screenshot 5" class="screenshot">
+          <img src="screenshots/bio-asset-management/S__11468812_0.jpg" alt="Screenshot 6" class="screenshot">
         </div>
       </div>
     </div>
