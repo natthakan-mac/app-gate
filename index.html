@@ -2073,19 +2073,6 @@
         document.getElementById('helpTooltipOverlay').classList.remove('show');
       }
     }
-
-    // Add touch support for mobile devices
-    window.ontouchend = function (event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-      // Close help tooltip when touching outside
-      if (!event.target.closest('.help-button') && !event.target.closest('.help-tooltip') && !event.target.closest('.help-tooltip-overlay')) {
-        document.getElementById('helpTooltip').classList.remove('show');
-        document.getElementById('helpTooltipOverlay').classList.remove('show');
-      }
-    }
   </script>
 </body>
 
