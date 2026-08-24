@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="socBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded card -->
+  <rect width="512" height="512" rx="108" fill="url(#socBg)"/>
+  
+  <!-- Subtle cyber grid lines -->
+  <path d="M64 256 H448 M256 64 V448" stroke="#ffffff" stroke-opacity="0.04" stroke-width="2"/>
+  <circle cx="256" cy="256" r="160" stroke="#ffffff" stroke-opacity="0.04" stroke-width="2" fill="none"/>
+
+  <!-- Outer Shield Glow -->
+  <path d="M256 80 L380 134 V242 C380 326 326 398 256 432 C186 398 132 326 132 242 V134 Z" 
+        fill="none" stroke="url(#accentGrad)" stroke-width="6" opacity="0.3" filter="url(#glow)"/>
+
+  <!-- Main Shield Body -->
+  <path d="M256 92 L368 142 V240 C368 316 318 382 256 414 C194 382 144 316 144 240 V142 Z" 
+        fill="url(#shieldGrad)" opacity="0.95"/>
+
+  <!-- Shield Inner Layer / Shadow overlay -->
+  <path d="M256 92 L368 142 V240 C368 316 318 382 256 414 V92 Z" 
+        fill="#ffffff" opacity="0.12"/>
+
+  <!-- Security Audit Pulse / Check & Radar Motif -->
+  <!-- Inner Shield Cutout -->
+  <path d="M256 126 L340 164 V238 C340 298 302 352 256 378 C210 352 172 298 172 238 V164 Z" 
+        fill="#0f172a" opacity="0.88"/>
+
+  <!-- Center Security Lock / Keyhole / Audit Symbol -->
+  <path d="M256 182 C236 182 220 198 220 218 V236 H214 C205 236 198 243 198 252 V304 C198 313 205 320 214 320 H298 C307 320 314 313 314 304 V252 C314 243 307 236 298 236 H292 V218 C292 198 276 182 256 182 Z M274 236 H238 V218 C238 208 246 200 256 200 C266 200 274 208 274 218 Z" 
+        fill="url(#accentGrad)"/>
+
+  <!-- Center Keyhole Dot -->
+  <circle cx="256" cy="272" r="7" fill="#0f172a"/>
+  <path d="M253 274 L251 292 H261 L259 274 Z" fill="#0f172a"/>
+</svg>

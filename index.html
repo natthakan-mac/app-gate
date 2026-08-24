@@ -422,10 +422,11 @@
 
     .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.45s; }
     .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.50s; }
+    .container .links:nth-of-type(4) .link:nth-child(3) { animation-delay: 0.55s; }
 
-    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.55s; }
-    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.60s; }
-    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.65s; }
+    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.60s; }
+    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.65s; }
+    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.70s; }
 
     .card-open-btn {
       padding: 5px 18px;
@@ -1489,6 +1490,16 @@
         <a href="https://spd.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
           onclick="event.stopPropagation();">Open</a>
       </div>
+      <div class="link" onclick="openModal('modal15')">
+        <img src="icons/bio-smb-soc.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">BIO SMB SOC</div>
+          <div class="link-description">ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์</div>
+          <span class="webapp-badge">Web App</span>
+        </div>
+        <a href="https://smb-audit.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
     </div>
 
     <div class="section-title"><i class="fa-solid fa-industry"></i>Production</div>
@@ -1952,6 +1963,35 @@
           <img src="screenshots/bio-asset-management/S__11468809_0.jpg" alt="Screenshot 4" class="screenshot">
           <img src="screenshots/bio-asset-management/S__11468810_0.jpg" alt="Screenshot 5" class="screenshot">
           <img src="screenshots/bio-asset-management/S__11468812_0.jpg" alt="Screenshot 6" class="screenshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 15 - BIO SMB SOC -->
+  <div id="modal15" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal15')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/bio-smb-soc.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>BIO SMB SOC</h2>
+          <p class="modal-subtitle">Cybersecurity Audit & Operations Platform</p>
+          <a href="https://smb-audit.bioinnotech.co.th/" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบศูนย์ปฏิบัติการเฝ้าระวังความมั่นคงปลอดภัยทางไซเบอร์และการตรวจสอบ (BIO SMB SOC & Audit Platform)
+          สำหรับติดตาม ตรวจสอบ และประเมินความเสี่ยงด้านความปลอดภัยของระบบเทคโนโลยีสารสนเทศ
+          ช่วยเสริมสร้างความปลอดภัยและป้องกันภัยคุกคามทางไซเบอร์สำหรับองค์กร
+        </p>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body" style="padding-top: 20px;">
+        <h3>Screenshots</h3>
+        <div class="screenshot-container">
         </div>
       </div>
     </div>

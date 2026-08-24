@@ -27,6 +27,7 @@ A modern, minimal web portal for BIO Thailand Group's application ecosystem. Bui
 ### IT
 - **NMS Uptime Kuma** - Network monitoring system
 - **Speedtest Tracker** - Internet speed monitoring
+- **BIO SMB SOC** - SMB cybersecurity audit & operations platform
 
 ### Production
 - **ERP NEXT** - Enterprise resource planning system
