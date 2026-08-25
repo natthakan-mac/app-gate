@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="icons/fav.png?v=1.0.1" />
   <link rel="shortcut icon" href="icons/fav.png?v=1.0.1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet" />
   <script>
     // Unregister legacy Service Workers if any exist to prevent serving stale cache
     if ('serviceWorker' in navigator) {
@@ -332,26 +332,43 @@
     .container {
       width: 100%;
       max-width: 520px;
-      padding: 22px 0 10px;
+      padding: 12px 0 6px;
     }
 
     .logo {
-      max-width: 110px;
+      max-width: 85px;
       height: auto;
-      margin: 6px auto 4px;
+      margin: 2px auto;
       display: block;
     }
 
     h1 {
-      margin: 6px 0 2px;
-      font-size: 1.3rem;
+      margin: 4px 0 2px;
+      font-size: 1.1rem;
       line-height: 1.25;
       color: var(--title);
-      font-weight: 600;
+    }
+
+    h1 .brand-title {
+      font-weight: 700;
+      font-size: 1.05em;
+      letter-spacing: 0.4px;
+      display: inline-block;
+    }
+
+    h1 .sub-title {
+      font-weight: 400;
+      font-size: 0.85em;
+      color: var(--txt);
+      opacity: 0.85;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      margin-top: 1px;
     }
 
     p.lead {
-      margin: 0 0 14px;
+      margin: 0 0 8px;
+      font-size: 0.88rem;
       color: var(--muted);
     }
 
@@ -1290,27 +1307,27 @@
     @media (min-width: 768px) {
       .container {
         max-width: 90%;
-        padding: 40px 0 20px;
+        padding: 20px 0 10px;
         text-align: left;
       }
 
       .main-header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 14px;
       }
 
       .logo {
-        max-width: 130px;
+        max-width: 95px;
       }
 
       h1 {
-        font-size: 2rem;
-        margin-top: 12px;
+        font-size: 1.45rem;
+        margin-top: 6px;
       }
 
       p.lead {
-        font-size: 1.05rem;
-        margin-bottom: 24px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
       }
 
       .section-title {
@@ -1322,6 +1339,10 @@
       .links {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 20px;
+      }
+
+      .links.links-2col {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .modal-content {
@@ -1367,8 +1388,8 @@
 
   <div class="container">
     <div class="main-header">
-      <img src="https://bioinnotechthailand.com/link/logo.png" alt="Logo" class="logo" />
-      <h1>BIO THAILAND GROUP<br>Application Portal</h1>
+      <img src="icons/logo.svg" alt="BIO Thailand Logo" class="logo" />
+      <h1><span class="brand-title">BIO THAILAND GROUP</span><br><span class="sub-title">Application Portal</span></h1>
       <p class="lead">ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์</p>
     </div>
 
@@ -1397,7 +1418,7 @@
     </div>
 
     <div class="section-title"><i class="fa-solid fa-warehouse"></i>Stock and Inventory</div>
-    <div class="links">
+    <div class="links links-2col">
       <div class="link" onclick="openModal('modal1')">
         <img src="icons/app1-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
@@ -1429,9 +1450,7 @@
           class="card-open-btn" onclick="event.stopPropagation();">Open</a>
       </div>
       <div class="link" onclick="openModal('modal14')">
-        <div class="bio-ams-icon link-icon">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
+        <img src="icons/bio-ams.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO AMS</div>
           <div class="link-description">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
@@ -1491,7 +1510,7 @@
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-industry"></i>Production</div>
+    <div class="section-title"><i class="fa-solid fa-industry"></i>Manufacturing</div>
     <div class="links">
       <div class="link" onclick="openModal('modal8')">
         <img src="icons/erpnext.webp" alt="App Icon" class="link-icon">
@@ -1926,9 +1945,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal14')">&times;</span>
       <div class="modal-header">
-        <div class="bio-ams-icon modal-icon">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
+        <img src="icons/bio-ams.svg" alt="App Icon" class="modal-icon">
         <div class="modal-header-text">
           <h2>BIO AMS</h2>
           <p class="modal-subtitle">Enterprise Asset Management System</p>
