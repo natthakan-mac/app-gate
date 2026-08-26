@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="icons/fav.png?v=1.0.1" />
   <link rel="shortcut icon" href="icons/fav.png?v=1.0.1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet" />
   <script>
     // Unregister legacy Service Workers if any exist to prevent serving stale cache
     if ('serviceWorker' in navigator) {
@@ -332,26 +332,92 @@
     .container {
       width: 100%;
       max-width: 520px;
-      padding: 22px 0 10px;
+      padding: 12px 0 6px;
+      position: relative;
+    }
+
+    .top-controls {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .control-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      color: var(--txt);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .control-btn:hover {
+      background: var(--card-bg-hover);
+      border-color: var(--card-border-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .flag-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flag-svg {
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      vertical-align: middle;
+      display: block;
     }
 
     .logo {
-      max-width: 110px;
+      max-width: 85px;
       height: auto;
-      margin: 6px auto 4px;
+      margin: 2px auto;
       display: block;
     }
 
     h1 {
-      margin: 6px 0 2px;
-      font-size: 1.3rem;
+      margin: 4px 0 2px;
+      font-size: 1.1rem;
       line-height: 1.25;
       color: var(--title);
-      font-weight: 600;
+    }
+
+    h1 .brand-title {
+      font-weight: 700;
+      font-size: 1.05em;
+      letter-spacing: 0.4px;
+      display: inline-block;
+    }
+
+    h1 .sub-title {
+      font-weight: 400;
+      font-size: 0.85em;
+      color: var(--txt);
+      opacity: 0.85;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      margin-top: 1px;
     }
 
     p.lead {
-      margin: 0 0 14px;
+      margin: 0 0 8px;
+      font-size: 0.88rem;
       color: var(--muted);
     }
 
@@ -1292,27 +1358,27 @@
     @media (min-width: 768px) {
       .container {
         max-width: 90%;
-        padding: 40px 0 20px;
+        padding: 20px 0 10px;
         text-align: left;
       }
 
       .main-header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 14px;
       }
 
       .logo {
-        max-width: 130px;
+        max-width: 95px;
       }
 
       h1 {
-        font-size: 2rem;
-        margin-top: 12px;
+        font-size: 1.45rem;
+        margin-top: 6px;
       }
 
       p.lead {
-        font-size: 1.05rem;
-        margin-bottom: 24px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
       }
 
       .section-title {
@@ -1324,6 +1390,10 @@
       .links {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 20px;
+      }
+
+      .links.links-2col {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .modal-content {
@@ -1368,19 +1438,29 @@
   </div>
 
   <div class="container">
+    <div class="top-controls">
+      <button id="langToggleBtn" class="control-btn" onclick="toggleLanguage()" title="Switch Language">
+        <span class="flag-container"></span>
+        <span class="lang-text">TH</span>
+      </button>
+      <button id="themeToggleBtn" class="control-btn" onclick="toggleTheme()" title="Toggle Theme">
+        <i class="fa-solid fa-moon theme-icon moon"></i>
+        <i class="fa-solid fa-sun theme-icon sun"></i>
+      </button>
+    </div>
     <div class="main-header">
-      <img src="https://bioinnotechthailand.com/link/logo.png" alt="Logo" class="logo" />
-      <h1>BIO THAILAND GROUP<br>Application Portal</h1>
-      <p class="lead">ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์</p>
+      <img src="icons/logo.svg" alt="BIO Thailand Logo" class="logo" />
+      <h1><span class="brand-title">BIO THAILAND GROUP</span><br><span class="sub-title">Application Portal</span></h1>
+      <p class="lead" data-i18n="lead">ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์</p>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-globe"></i>General</div>
+    <div class="section-title"><i class="fa-solid fa-globe"></i><span data-i18n="general">General</span></div>
     <div class="links">
       <div class="link" onclick="openModal('modal9')">
         <img src="icons/webmail-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">Webmail</div>
-          <div class="link-description">ระบบอีเมลองค์กร</div>
+          <div class="link-description" data-i18n="webmail_desc">ระบบอีเมลองค์กร</div>
           <span class="thirdparty-badge">3rd Party</span>
         </div>
         <a href="http://webmail.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1390,7 +1470,7 @@
         <img src="icons/docuseal.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">DocuSeal</div>
-          <div class="link-description">ระบบลงนามเอกสารอิเล็กทรอนิกส์</div>
+          <div class="link-description" data-i18n="docuseal_desc">ระบบลงนามเอกสารอิเล็กทรอนิกส์</div>
           <span class="docker-badge">Docker</span>
         </div>
         <a href="https://esign.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1398,13 +1478,13 @@
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-warehouse"></i>Stock and Inventory</div>
-    <div class="links">
+    <div class="section-title"><i class="fa-solid fa-warehouse"></i><span data-i18n="stock">Stock and Inventory</span></div>
+    <div class="links links-2col">
       <div class="link" onclick="openModal('modal1')">
         <img src="icons/app1-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO IVM</div>
-          <div class="link-description">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค</div>
+          <div class="link-description" data-i18n="bio_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค</div>
           <span class="appsheet-badge">AppSheet</span>
         </div>
         <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" target="_blank" rel="noopener noreferrer"
@@ -1414,7 +1494,7 @@
         <img src="icons/app2-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO Thailand IVM</div>
-          <div class="link-description">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค (ไทยแลนด์)</div>
+          <div class="link-description" data-i18n="bio_th_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค (ไทยแลนด์)</div>
           <span class="appsheet-badge">AppSheet</span>
         </div>
         <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" target="_blank" rel="noopener noreferrer"
@@ -1424,19 +1504,17 @@
         <img src="icons/app3-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO Green World IVM</div>
-          <div class="link-description">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค กรีน เวิลด์</div>
+          <div class="link-description" data-i18n="bio_green_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค กรีน เวิลด์</div>
           <span class="appsheet-badge">AppSheet</span>
         </div>
         <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" target="_blank" rel="noopener noreferrer"
           class="card-open-btn" onclick="event.stopPropagation();">Open</a>
       </div>
       <div class="link" onclick="openModal('modal14')">
-        <div class="bio-ams-icon link-icon">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
+        <img src="icons/bio-ams.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO AMS</div>
-          <div class="link-description">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
+          <div class="link-description" data-i18n="bio_ams_desc">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://bio-asset-management.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1444,13 +1522,13 @@
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-handshake"></i>Customer Relation Management</div>
+    <div class="section-title"><i class="fa-solid fa-handshake"></i><span data-i18n="crm">Customer Relation Management</span></div>
     <div class="links">
       <div class="link link-orange" onclick="openModal('modal4')">
         <img src="icons/app4-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO CRM 2.0</div>
-          <div class="link-description">ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์ กรุ๊ป</div>
+          <div class="link-description" data-i18n="bio_crm_desc">ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์ กรุ๊ป</div>
           <span class="appsheet-badge">AppSheet</span>
         </div>
         <a href="https://www.appsheet.com/newshortcut/3e6164ba-4a4f-417c-a01b-54e9549e7fa9" target="_blank" rel="noopener noreferrer"
@@ -1461,7 +1539,7 @@
         <img src="icons/bio-sales-int.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO Sales Intelligence</div>
-          <div class="link-description">ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด</div>
+          <div class="link-description" data-i18n="bio_sales_int_desc">ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://bio-sales-int.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1469,13 +1547,13 @@
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-laptop-code"></i>IT</div>
+    <div class="section-title"><i class="fa-solid fa-laptop-code"></i><span data-i18n="it">IT</span></div>
     <div class="links">
       <div class="link" onclick="openModal('modal6')">
         <img src="icons/uptime-kuma-icon.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">NMS Uptime Kuma</div>
-          <div class="link-description">ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย</div>
+          <div class="link-description" data-i18n="nms_desc">ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย</div>
           <span class="docker-badge">Docker</span>
         </div>
         <a href="https://nms.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1485,7 +1563,7 @@
         <img src="icons/speedtest.png" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">Speedtest Tracker</div>
-          <div class="link-description">ระบบติดตามความเร็วอินเทอร์เน็ต</div>
+          <div class="link-description" data-i18n="speedtest_desc">ระบบติดตามความเร็วอินเทอร์เน็ต</div>
           <span class="docker-badge">Docker</span>
         </div>
         <a href="https://spd.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1495,7 +1573,7 @@
         <img src="icons/bio-smb-soc.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO SMB SOC</div>
-          <div class="link-description">ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์</div>
+          <div class="link-description" data-i18n="smb_soc_desc">ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://smb-audit.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1505,7 +1583,7 @@
         <img src="icons/bio-smb-index.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO SMB INDEX</div>
-          <div class="link-description">ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง</div>
+          <div class="link-description" data-i18n="smb_index_desc">ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://smb-index.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1513,13 +1591,13 @@
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-industry"></i>Production</div>
+    <div class="section-title"><i class="fa-solid fa-industry"></i><span data-i18n="mfg">Manufacturing</span></div>
     <div class="links">
       <div class="link" onclick="openModal('modal8')">
         <img src="icons/erpnext.webp" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">ERP NEXT</div>
-          <div class="link-description">ระบบบริหารจัดการทรัพยากรองค์กร</div>
+          <div class="link-description" data-i18n="erp_desc">ระบบบริหารจัดการทรัพยากรองค์กร</div>
           <span class="docker-badge">Docker</span>
         </div>
         <a href="https://next.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1529,7 +1607,7 @@
         <img src="icons/casp-app-ico.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">CASP MA</div>
-          <div class="link-description">ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP</div>
+          <div class="link-description" data-i18n="casp_desc">ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://casp-ma.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1539,7 +1617,7 @@
         <img src="icons/bio-water-ico.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
           <div class="link-name">BIO WPM</div>
-          <div class="link-description">ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank</div>
+          <div class="link-description" data-i18n="wpm_desc">ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank</div>
           <span class="webapp-badge">Web App</span>
         </div>
         <a href="https://water-plant-maintenance.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
@@ -1948,9 +2026,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal14')">&times;</span>
       <div class="modal-header">
-        <div class="bio-ams-icon modal-icon">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
+        <img src="icons/bio-ams.svg" alt="App Icon" class="modal-icon">
         <div class="modal-header-text">
           <h2>BIO AMS</h2>
           <p class="modal-subtitle">Enterprise Asset Management System</p>
@@ -2045,7 +2121,7 @@
     </div>
   </div>
 
-  <footer>
+  <footer data-i18n="footer">
     &copy; 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>
     ITDS (Information Technology & Digital Solutions)<br>
     ฝ่ายเทคโนโลยีสารสนเทศและบริการดิจิทัล
@@ -2054,7 +2130,7 @@
   <!-- Floating Help Button -->
   <div class="help-button" onclick="toggleHelp()">
     <i class="fa-solid fa-circle-info"></i>
-    <span>ช่วยเหลือ</span>
+    <span data-i18n="help_btn">ช่วยเหลือ</span>
   </div>
 
   <!-- Help Tooltip Overlay -->
@@ -2063,8 +2139,12 @@
   <!-- Help Tooltip -->
   <div class="help-tooltip" id="helpTooltip">
     <div class="help-tooltip-header">
-      <h3>วิธีการใช้งาน</h3>
+      <h3 data-i18n="help_title">วิธีการใช้งาน</h3>
       <div style="display: flex; align-items: center; gap: 8px;">
+        <button class="control-btn tooltip-lang-btn" onclick="toggleLanguage()" title="Switch Language" style="padding: 4px 10px; font-size: 0.78rem;">
+          <span class="flag-container"></span>
+          <span class="lang-text">TH</span>
+        </button>
         <button onclick="toggleTheme()"
           style="background: transparent; border: none; color: var(--txt); font-size: 18px; cursor: pointer; padding: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: all 0.2s;">
           <i class="fa-solid fa-moon theme-icon moon"></i>
@@ -2073,7 +2153,7 @@
         <button class="help-tooltip-close" onclick="toggleHelp()">&times;</button>
       </div>
     </div>
-    <p>แอปที่มีป้าย <span style="color: #4285F4; font-weight: 600;">AppSheet</span> จำเป็นต้องติดตั้งแอป AppSheet
+    <p data-i18n="help_desc">แอปที่มีป้าย <span style="color: #4285F4; font-weight: 600;">AppSheet</span> จำเป็นต้องติดตั้งแอป AppSheet
       ในอุปกรณ์ของคุณก่อน และคุณต้องได้รับการมอบหมายสิทธิ์จากผู้ดูแลระบบเพื่อเข้าสู่ระบบด้วยบัญชี Google ของคุณ</p>
     <div class="store-buttons">
       <a href="https://apps.apple.com/th/app/appsheet/id732548900" target="_blank" class="store-button app-store">
@@ -2093,7 +2173,7 @@
       </a>
     </div>
     <div class="contact-info">
-      <h4>ติดต่อสอบถาม</h4>
+      <h4 data-i18n="contact_title">ติดต่อสอบถาม</h4>
       <div class="contact-item">
         <i class="fa-solid fa-phone"></i>
         <a href="tel:0969267701">096-926-7701</a>
@@ -2110,6 +2190,103 @@
   </div>
 
   <script>
+    const i18n = {
+      th: {
+        lead: "ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์",
+        general: "General",
+        stock: "Stock and Inventory",
+        crm: "Customer Relation Management",
+        it: "IT",
+        mfg: "Manufacturing",
+        webmail_desc: "ระบบอีเมลองค์กร",
+        docuseal_desc: "ระบบลงนามเอกสารอิเล็กทรอนิกส์",
+        bio_ivm_desc: "ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค",
+        bio_th_ivm_desc: "ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค (ไทยแลนด์)",
+        bio_green_ivm_desc: "ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค กรีน เวิลด์",
+        bio_ams_desc: "ระบบบริหารจัดการทรัพย์สินองค์กร",
+        bio_crm_desc: "ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์ กรุ๊ป",
+        bio_sales_int_desc: "ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด",
+        nms_desc: "ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย",
+        speedtest_desc: "ระบบติดตามความเร็วอินเทอร์เน็ต",
+        smb_soc_desc: "ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์",
+        smb_index_desc: "ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง",
+        erp_desc: "ระบบบริหารจัดการทรัพยากรองค์กร",
+        casp_desc: "ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP",
+        wpm_desc: "ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank",
+        help_btn: "ช่วยเหลือ",
+        footer: "© 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>ITDS (Information Technology & Digital Solutions)<br>ฝ่ายเทคโนโลยีสารสนเทศและบริการดิจิทัล",
+        help_title: "วิธีการใช้งาน",
+        help_desc: "แอปที่มีป้าย <span style=\"color: #4285F4; font-weight: 600;\">AppSheet</span> จำเป็นต้องติดตั้งแอป AppSheet ในอุปกรณ์ของคุณก่อน และคุณต้องได้รับการมอบหมายสิทธิ์จากผู้ดูแลระบบเพื่อเข้าสู่ระบบด้วยบัญชี Google ของคุณ",
+        contact_title: "ติดต่อสอบถาม"
+      },
+      en: {
+        lead: "Application Portal for BIO Thailand Group",
+        general: "General",
+        stock: "Stock and Inventory",
+        crm: "Customer Relation Management",
+        it: "IT",
+        mfg: "Manufacturing",
+        webmail_desc: "Corporate Email System",
+        docuseal_desc: "Electronic Signature Platform",
+        bio_ivm_desc: "Inventory Management System for BIO Inno Tech",
+        bio_th_ivm_desc: "Inventory Management System for BIO Inno Tech (Thailand)",
+        bio_green_ivm_desc: "Inventory Management System for BIO Green World",
+        bio_ams_desc: "Enterprise Asset Management System",
+        bio_crm_desc: "Sales Reporting System for BIO Thailand Group",
+        bio_sales_int_desc: "Sales Analytics Platform for BIO Inno Tech Co., Ltd.",
+        nms_desc: "Network & Server Monitoring System",
+        speedtest_desc: "Internet Speed Monitoring System",
+        smb_soc_desc: "Cybersecurity Operations & Audit Platform",
+        smb_index_desc: "High-speed Network Share Indexing & Search Engine",
+        erp_desc: "Enterprise Resource Planning System",
+        casp_desc: "CASP Management & Maintenance System",
+        wpm_desc: "BIO Water Tank Management & Maintenance System",
+        help_btn: "Help",
+        footer: "© 2025 BIO Thailand Group. All rights reserved.<br>ITDS (Information Technology & Digital Solutions)<br>Information Technology & Digital Solutions Department",
+        help_title: "How to Use",
+        help_desc: "Apps with the <span style=\"color: #4285F4; font-weight: 600;\">AppSheet</span> badge require the AppSheet app installed on your device, and you must be granted access by an administrator using your Google account.",
+        contact_title: "Contact Us"
+      }
+    };
+
+    const thFlagSvg = `<svg class="flag-svg" viewBox="0 0 900 600" width="18" height="12"><rect width="900" height="600" fill="#ED1C24"/><rect y="100" width="900" height="400" fill="#FFFFFF"/><rect y="200" width="900" height="200" fill="#241D4F"/></svg>`;
+    const enFlagSvg = `<svg class="flag-svg" viewBox="0 0 60 30" width="18" height="12"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg>`;
+
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      localStorage.setItem('lang', lang);
+
+      const flagContainers = document.querySelectorAll('.flag-container');
+      const textElems = document.querySelectorAll('.lang-text');
+
+      flagContainers.forEach(container => {
+        container.innerHTML = lang === 'th' ? thFlagSvg : enFlagSvg;
+      });
+
+      textElems.forEach(textElem => {
+        textElem.textContent = lang === 'th' ? 'TH' : 'EN';
+      });
+
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[lang] && i18n[lang][key]) {
+          el.innerHTML = i18n[lang][key];
+        }
+      });
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('lang') === 'en' ? 'th' : 'en';
+      setLanguage(currentLang);
+    }
+
+    // Initialize language on DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const initialLang = localStorage.getItem('lang') || 'th';
+      setLanguage(initialLang);
+    });
+
     // Theme Toggle Function
     function toggleTheme() {
       const html = document.documentElement;
