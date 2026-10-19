@@ -486,14 +486,19 @@
     .container .links:nth-of-type(3) .link:nth-child(1) { animation-delay: 0.35s; }
     .container .links:nth-of-type(3) .link:nth-child(2) { animation-delay: 0.40s; }
 
-    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.45s; }
-    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.50s; }
-    .container .links:nth-of-type(4) .link:nth-child(3) { animation-delay: 0.55s; }
-    .container .links:nth-of-type(4) .link:nth-child(4) { animation-delay: 0.58s; }
+    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.43s; }
+    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.46s; }
+    .container .links:nth-of-type(4) .link:nth-child(3) { animation-delay: 0.49s; }
+    .container .links:nth-of-type(4) .link:nth-child(4) { animation-delay: 0.52s; }
+    .container .links:nth-of-type(4) .link:nth-child(5) { animation-delay: 0.55s; }
+    .container .links:nth-of-type(4) .link:nth-child(6) { animation-delay: 0.58s; }
+    .container .links:nth-of-type(4) .link:nth-child(7) { animation-delay: 0.61s; }
+    .container .links:nth-of-type(4) .link:nth-child(8) { animation-delay: 0.64s; }
+    .container .links:nth-of-type(4) .link:nth-child(9) { animation-delay: 0.67s; }
 
-    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.60s; }
-    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.65s; }
-    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.70s; }
+    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.70s; }
+    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.73s; }
+    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.76s; }
 
     .card-open-btn {
       padding: 5px 18px;
@@ -1549,24 +1554,74 @@
 
     <div class="section-title"><i class="fa-solid fa-laptop-code"></i><span data-i18n="it">IT</span></div>
     <div class="links">
-      <div class="link" onclick="openModal('modal6')">
-        <img src="icons/uptime-kuma-icon.png" alt="App Icon" class="link-icon">
+      <div class="link" onclick="openModal('modal17')">
+        <img src="icons/zabbix.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
-          <div class="link-name">NMS Uptime Kuma</div>
-          <div class="link-description" data-i18n="nms_desc">ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย</div>
-          <span class="docker-badge">Docker</span>
+          <div class="link-name">Zabbix</div>
+          <div class="link-description" data-i18n="zabbix_desc">ระบบตรวจสอบและติดตามสถานะเครือข่ายและเซิร์ฟเวอร์</div>
+          <span class="webapp-badge">Web App</span>
         </div>
-        <a href="https://nms.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+        <a href="https://zabbix.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
           onclick="event.stopPropagation();">Open</a>
       </div>
-      <div class="link" onclick="openModal('modal7')">
-        <img src="icons/speedtest.png" alt="App Icon" class="link-icon">
+      <div class="link" onclick="openModal('modal18')">
+        <img src="icons/dockhand-local.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
-          <div class="link-name">Speedtest Tracker</div>
-          <div class="link-description" data-i18n="speedtest_desc">ระบบติดตามความเร็วอินเทอร์เน็ต</div>
+          <div class="link-name">Local Dockhand</div>
+          <div class="link-description" data-i18n="dockhand_local_desc">ระบบจัดการ Docker Containers ภายในองค์กร</div>
           <span class="docker-badge">Docker</span>
         </div>
-        <a href="https://spd.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+        <a href="https://docker.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
+      <div class="link" onclick="openModal('modal19')">
+        <img src="icons/dockhand-cloud.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Cloud Dockhand</div>
+          <div class="link-description" data-i18n="dockhand_cloud_desc">ระบบจัดการ Docker Containers บนคลาวด์ (Oracle)</div>
+          <span class="docker-badge">Docker</span>
+        </div>
+        <a href="https://oracle.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
+      <div class="link" onclick="openModal('modal20')">
+        <img src="icons/omada-tplink.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Omada TP-Link</div>
+          <div class="link-description" data-i18n="omada_desc">ระบบบริหารจัดการเครือข่ายและ Wi-Fi บนคลาวด์</div>
+          <span class="thirdparty-badge">Third Party</span>
+        </div>
+        <a href="https://omada.tplinkcloud.com" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
+      <div class="link" onclick="openModal('modal21')">
+        <img src="icons/rustdesk.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">RustDesk UI</div>
+          <div class="link-description" data-i18n="rustdesk_desc">ระบบควบคุมและเข้าถึงเครื่องระยะไกล (Remote Desktop)</div>
+          <span class="webapp-badge">Web App</span>
+        </div>
+        <a href="https://rdp.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
+      <div class="link" onclick="openModal('modal22')">
+        <img src="icons/nginx-local.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Local NGINX</div>
+          <div class="link-description" data-i18n="nginx_local_desc">ระบบจัดการ Reverse Proxy และ SSL ภายในองค์กร</div>
+          <span class="docker-badge">Docker</span>
+        </div>
+        <a href="http://140.245.119.156:81/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
+      <div class="link" onclick="openModal('modal23')">
+        <img src="icons/nginx-cloud.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Cloud NGINX</div>
+          <div class="link-description" data-i18n="nginx_cloud_desc">ระบบจัดการ Reverse Proxy และ SSL บนคลาวด์</div>
+          <span class="docker-badge">Docker</span>
+        </div>
+        <a href="https://nginx.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
           onclick="event.stopPropagation();">Open</a>
       </div>
       <div class="link" onclick="openModal('modal15')">
@@ -1820,70 +1875,6 @@
     </div>
   </div>
 
-
-  <!-- Modal 6 -->
-  <div id="modal6" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal6')">&times;</span>
-      <div class="modal-header">
-        <img src="icons/uptime-kuma-icon.png" alt="App Icon" class="modal-icon">
-        <div class="modal-header-text">
-          <h2>NMS Uptime Kuma</h2>
-          <p class="modal-subtitle">Network Monitoring System</p>
-          <a href="https://nms.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
-        </div>
-      </div>
-      <hr class="modal-separator">
-      <div class="modal-body">
-        <p class="modal-description">
-          ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย ช่วยในการติดตามความพร้อมใช้งานของระบบ
-          แจ้งเตือนเมื่อเกิดปัญหา และสร้างรายงานสถิติการทำงานของเซิร์ฟเวอร์
-        </p>
-      </div>
-      <hr class="modal-separator">
-      <div class="modal-body" style="padding-top: 20px;">
-        <h3>Screenshots</h3>
-        <div class="screenshot-container">
-          <img src="screenshots/nms-uptime-kuma/S__4325424_0.jpg" alt="Screenshot 1" class="screenshot">
-          <img src="screenshots/nms-uptime-kuma/S__4325425_0.jpg" alt="Screenshot 2" class="screenshot">
-          <img src="screenshots/nms-uptime-kuma/S__4325426_0.jpg" alt="Screenshot 3" class="screenshot">
-          <img src="screenshots/nms-uptime-kuma/S__4325427_0.jpg" alt="Screenshot 4" class="screenshot">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 7 -->
-  <div id="modal7" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal7')">&times;</span>
-      <div class="modal-header">
-        <img src="icons/speedtest.png" alt="App Icon" class="modal-icon">
-        <div class="modal-header-text">
-          <h2>Speedtest Tracker</h2>
-          <p class="modal-subtitle">Internet Speed Monitoring</p>
-          <a href="https://spd.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
-        </div>
-      </div>
-      <hr class="modal-separator">
-      <div class="modal-body">
-        <p class="modal-description">
-          ระบบติดตามและบันทึกความเร็วอินเทอร์เน็ต ช่วยในการวิเคราะห์คุณภาพการเชื่อมต่อ
-          สร้างกราฟแสดงประวัติความเร็ว และตรวจสอบประสิทธิภาพของเครือข่าย
-        </p>
-      </div>
-      <hr class="modal-separator">
-      <div class="modal-body" style="padding-top: 20px;">
-        <h3>Screenshots</h3>
-        <div class="screenshot-container">
-          <img src="screenshots/speedtest-tracker/S__4325429_0.jpg" alt="Screenshot 1" class="screenshot">
-          <img src="screenshots/speedtest-tracker/S__4325431_0.jpg" alt="Screenshot 2" class="screenshot">
-          <img src="screenshots/speedtest-tracker/S__4325432_0.jpg" alt="Screenshot 3" class="screenshot">
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Modal 8 -->
   <div id="modal8" class="modal">
     <div class="modal-content">
@@ -2121,6 +2112,160 @@
     </div>
   </div>
 
+  <!-- Modal 17 - Zabbix -->
+  <div id="modal17" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal17')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/zabbix.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Zabbix</h2>
+          <p class="modal-subtitle">Enterprise Network & Server Monitoring</p>
+          <a href="https://zabbix.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบตรวจสอบและติดตามสถานะการทำงานของเครือข่าย เซิร์ฟเวอร์ และอุปกรณ์ไอทีในระดับองค์กร (Zabbix Enterprise Monitoring)
+          ช่วยตรวจจับความผิดปกติ แจ้งเตือนปัญหาแบบเรียลไทม์ และบันทึกสถิติประสิทธิภาพการทำงานเพื่อความเสถียรสูงสุดของระบบ
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 18 - Local Dockhand -->
+  <div id="modal18" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal18')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/dockhand-local.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Local Dockhand</h2>
+          <p class="modal-subtitle">Local Container Management Dashboard</p>
+          <a href="https://docker.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการและควบคุม Docker Containers ภายในองค์กร (Local Environment)
+          ช่วยให้ทีม IT สามารถตรวจสอบสถานะการทำงาน จัดการ Container, Images, Volumes และดู Log การทำงานได้อย่างสะดวกและรวดเร็ว
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 19 - Cloud Dockhand -->
+  <div id="modal19" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal19')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/dockhand-cloud.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Cloud Dockhand</h2>
+          <p class="modal-subtitle">Cloud Container Management Dashboard</p>
+          <a href="https://oracle.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการ Docker Containers บนโครงสร้างพื้นฐานระบบคลาวด์ (Oracle Cloud Infrastructure)
+          สำหรับควบคุม จัดการ และตรวจสอบสถานะบริการต่างๆ บนคลาวด์ของกลุ่มบริษัท ไบโอ ไทยแลนด์ อย่างมีประสิทธิภาพ
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 20 - Omada TP-Link -->
+  <div id="modal20" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal20')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/omada-tplink.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Omada TP-Link</h2>
+          <p class="modal-subtitle">Cloud Software Defined Networking (SDN)</p>
+          <a href="https://omada.tplinkcloud.com" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการเครือข่าย TP-Link Omada SDN ผ่านคลาวด์แบบรวมศูนย์
+          สำหรับการจัดการ Access Point, Network Switch และ Gateway เฝ้าระวังประสิทธิภาพและความปลอดภัยของเครือข่าย Wi-Fi องค์กรได้ทุกที่ทุกเวลา
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 21 - RustDesk UI -->
+  <div id="modal21" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal21')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/rustdesk.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>RustDesk UI</h2>
+          <p class="modal-subtitle">Remote Desktop & Access Platform</p>
+          <a href="https://rdp.bioinnotech.co.th" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบบริหารจัดการและควบคุมเครื่องคอมพิวเตอร์ระยะไกล (RustDesk Web UI & Relay Server)
+          ช่วยให้ทีม IT และผู้ใช้งานสามารถเชื่อมต่อเข้าถึงหน้าจอเดสก์ท็อปและเซิร์ฟเวอร์จากระยะไกลได้อย่างปลอดภัย รวดเร็ว และเข้ารหัสข้อมูลครบวงจร
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 22 - Local NGINX -->
+  <div id="modal22" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal22')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/nginx-local.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Local NGINX</h2>
+          <p class="modal-subtitle">Local Reverse Proxy & SSL Manager</p>
+          <a href="http://140.245.119.156:81/" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบจัดการ NGINX Reverse Proxy และ SSL Certificates ภายในเครือข่ายองค์กร (Local Environment)
+          สำหรับกำหนดทิศทางการเชื่อมต่อ โดเมนเสมือน และการกระจายโหลดของเซิร์ฟเวอร์ภายในบริษัท
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 23 - Cloud NGINX -->
+  <div id="modal23" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal23')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/nginx-cloud.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Cloud NGINX</h2>
+          <p class="modal-subtitle">Cloud Reverse Proxy & SSL Manager</p>
+          <a href="https://nginx.bioinnotech.co.th/" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          ระบบจัดการ NGINX Reverse Proxy และใบรับรองความปลอดภัย SSL บนคลาวด์ (Cloud Infrastructure)
+          สำหรับบริหารเส้นทางการรับส่งข้อมูลและปกป้องการเข้าถึงเว็บแอปพลิเคชันขององค์กรให้ปลอดภัยและมีเสถียรภาพสูง
+        </p>
+      </div>
+    </div>
+  </div>
+
   <footer data-i18n="footer">
     &copy; 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>
     ITDS (Information Technology & Digital Solutions)<br>
@@ -2206,8 +2351,13 @@
         bio_ams_desc: "ระบบบริหารจัดการทรัพย์สินองค์กร",
         bio_crm_desc: "ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์ กรุ๊ป",
         bio_sales_int_desc: "ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด",
-        nms_desc: "ระบบตรวจสอบสถานะเซิร์ฟเวอร์และเครือข่าย",
-        speedtest_desc: "ระบบติดตามความเร็วอินเทอร์เน็ต",
+        zabbix_desc: "ระบบตรวจสอบและติดตามสถานะเครือข่ายและเซิร์ฟเวอร์",
+        dockhand_local_desc: "ระบบจัดการ Docker Containers ภายในองค์กร",
+        dockhand_cloud_desc: "ระบบจัดการ Docker Containers บนคลาวด์ (Oracle)",
+        omada_desc: "ระบบบริหารจัดการเครือข่ายและ Wi-Fi บนคลาวด์",
+        rustdesk_desc: "ระบบควบคุมและเข้าถึงเครื่องระยะไกล (Remote Desktop)",
+        nginx_local_desc: "ระบบจัดการ Reverse Proxy และ SSL ภายในองค์กร",
+        nginx_cloud_desc: "ระบบจัดการ Reverse Proxy และ SSL บนคลาวด์",
         smb_soc_desc: "ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์",
         smb_index_desc: "ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง",
         erp_desc: "ระบบบริหารจัดการทรัพยากรองค์กร",
@@ -2234,8 +2384,13 @@
         bio_ams_desc: "Enterprise Asset Management System",
         bio_crm_desc: "Sales Reporting System for BIO Thailand Group",
         bio_sales_int_desc: "Sales Analytics Platform for BIO Inno Tech Co., Ltd.",
-        nms_desc: "Network & Server Monitoring System",
-        speedtest_desc: "Internet Speed Monitoring System",
+        zabbix_desc: "Network & Server Monitoring System",
+        dockhand_local_desc: "Local Docker Container Management System",
+        dockhand_cloud_desc: "Cloud Docker Container Management System (Oracle)",
+        omada_desc: "Cloud Network & Wi-Fi Management Platform",
+        rustdesk_desc: "Remote Desktop Management & Web Access Platform",
+        nginx_local_desc: "Local NGINX Reverse Proxy & SSL Management",
+        nginx_cloud_desc: "Cloud NGINX Reverse Proxy & SSL Management",
         smb_soc_desc: "Cybersecurity Operations & Audit Platform",
         smb_index_desc: "High-speed Network Share Indexing & Search Engine",
         erp_desc: "Enterprise Resource Planning System",

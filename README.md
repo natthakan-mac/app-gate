@@ -25,8 +25,13 @@ A modern, minimal web portal for BIO Thailand Group's application ecosystem. Bui
 - **BIO CRM** - Sales reporting system for BIO Inno Tech
 
 ### IT
-- **NMS Uptime Kuma** - Network monitoring system
-- **Speedtest Tracker** - Internet speed monitoring
+- **Zabbix** - Network & server monitoring system
+- **Local Dockhand** - Local Docker container management dashboard
+- **Cloud Dockhand** - Cloud Docker container management dashboard (Oracle)
+- **Omada TP-Link** - Cloud network & Wi-Fi management platform
+- **RustDesk UI** - Remote desktop management & web access platform
+- **Local NGINX** - Local NGINX reverse proxy & SSL manager
+- **Cloud NGINX** - Cloud NGINX reverse proxy & SSL manager
 - **BIO SMB SOC** - SMB cybersecurity audit & operations platform
 - **BIO SMB INDEX** - High-speed network share indexing & search engine
 

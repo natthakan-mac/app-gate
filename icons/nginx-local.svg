@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nginxLocalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#009639"/>
+      <stop offset="100%" stop-color="#006627"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#nginxLocalGrad)"/>
+  <!-- NGINX Hexagon & 'N' -->
+  <g transform="translate(64, 64) scale(0.75)">
+    <!-- Hexagon -->
+    <polygon points="256,16 456,128 456,352 256,464 56,352 56,128" fill="none" stroke="#ffffff" stroke-width="24" stroke-linejoin="round"/>
+    <!-- NGINX stylized N -->
+    <path d="M168 360 V120 L344 360 V120" fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>
