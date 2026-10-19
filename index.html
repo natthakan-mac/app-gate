@@ -486,19 +486,20 @@
     .container .links:nth-of-type(3) .link:nth-child(1) { animation-delay: 0.35s; }
     .container .links:nth-of-type(3) .link:nth-child(2) { animation-delay: 0.40s; }
 
-    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.43s; }
-    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.46s; }
-    .container .links:nth-of-type(4) .link:nth-child(3) { animation-delay: 0.49s; }
-    .container .links:nth-of-type(4) .link:nth-child(4) { animation-delay: 0.52s; }
-    .container .links:nth-of-type(4) .link:nth-child(5) { animation-delay: 0.55s; }
-    .container .links:nth-of-type(4) .link:nth-child(6) { animation-delay: 0.58s; }
-    .container .links:nth-of-type(4) .link:nth-child(7) { animation-delay: 0.61s; }
-    .container .links:nth-of-type(4) .link:nth-child(8) { animation-delay: 0.64s; }
-    .container .links:nth-of-type(4) .link:nth-child(9) { animation-delay: 0.67s; }
+    .container .links:nth-of-type(4) .link:nth-child(1) { animation-delay: 0.42s; }
+    .container .links:nth-of-type(4) .link:nth-child(2) { animation-delay: 0.45s; }
+    .container .links:nth-of-type(4) .link:nth-child(3) { animation-delay: 0.48s; }
+    .container .links:nth-of-type(4) .link:nth-child(4) { animation-delay: 0.51s; }
+    .container .links:nth-of-type(4) .link:nth-child(5) { animation-delay: 0.54s; }
+    .container .links:nth-of-type(4) .link:nth-child(6) { animation-delay: 0.57s; }
+    .container .links:nth-of-type(4) .link:nth-child(7) { animation-delay: 0.60s; }
+    .container .links:nth-of-type(4) .link:nth-child(8) { animation-delay: 0.63s; }
+    .container .links:nth-of-type(4) .link:nth-child(9) { animation-delay: 0.66s; }
+    .container .links:nth-of-type(4) .link:nth-child(10) { animation-delay: 0.69s; }
 
-    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.70s; }
-    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.73s; }
-    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.76s; }
+    .container .links:nth-of-type(5) .link:nth-child(1) { animation-delay: 0.72s; }
+    .container .links:nth-of-type(5) .link:nth-child(2) { animation-delay: 0.75s; }
+    .container .links:nth-of-type(5) .link:nth-child(3) { animation-delay: 0.78s; }
 
     .card-open-btn {
       padding: 5px 18px;
@@ -1624,6 +1625,16 @@
         <a href="https://nginx.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
           onclick="event.stopPropagation();">Open</a>
       </div>
+      <div class="link" onclick="openModal('modal24')">
+        <img src="icons/plesk.svg" alt="App Icon" class="link-icon">
+        <div class="link-content">
+          <div class="link-name">Plesk Control</div>
+          <div class="link-description" data-i18n="plesk_desc">ระบบจัดการเว็บโฮสติ้งและเซิร์ฟเวอร์ Plesk Obsidian</div>
+          <span class="thirdparty-badge">Third Party</span>
+        </div>
+        <a href="https://thsv21.hostatom.com:8443/login_up.php" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          onclick="event.stopPropagation();">Open</a>
+      </div>
       <div class="link" onclick="openModal('modal15')">
         <img src="icons/bio-smb-soc.svg" alt="App Icon" class="link-icon">
         <div class="link-content">
@@ -2266,6 +2277,28 @@
     </div>
   </div>
 
+  <!-- Modal 24 - Plesk Control -->
+  <div id="modal24" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal24')">&times;</span>
+      <div class="modal-header">
+        <img src="icons/plesk.svg" alt="App Icon" class="modal-icon">
+        <div class="modal-header-text">
+          <h2>Plesk Control</h2>
+          <p class="modal-subtitle">Plesk Obsidian 18.0.80 Server Control Panel</p>
+          <a href="https://thsv21.hostatom.com:8443/login_up.php" class="modal-button" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>
+      </div>
+      <hr class="modal-separator">
+      <div class="modal-body">
+        <p class="modal-description">
+          แผงควบคุมระบบเว็บโฮสติ้งและเซิร์ฟเวอร์ Plesk Obsidian (เวอร์ชัน 18.0.80)
+          สำหรับบริหารจัดการเว็บไซต์, โดเมน, ฐานข้อมูล, อีเมล และการตั้งค่าความปลอดภัยของเซิร์ฟเวอร์โฮสติ้งขององค์กร
+        </p>
+      </div>
+    </div>
+  </div>
+
   <footer data-i18n="footer">
     &copy; 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>
     ITDS (Information Technology & Digital Solutions)<br>
@@ -2358,6 +2391,7 @@
         rustdesk_desc: "ระบบควบคุมและเข้าถึงเครื่องระยะไกล (Remote Desktop)",
         nginx_local_desc: "ระบบจัดการ Reverse Proxy และ SSL ภายในองค์กร",
         nginx_cloud_desc: "ระบบจัดการ Reverse Proxy และ SSL บนคลาวด์",
+        plesk_desc: "ระบบจัดการเว็บโฮสติ้งและเซิร์ฟเวอร์ Plesk Obsidian",
         smb_soc_desc: "ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์",
         smb_index_desc: "ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง",
         erp_desc: "ระบบบริหารจัดการทรัพยากรองค์กร",
@@ -2391,6 +2425,7 @@
         rustdesk_desc: "Remote Desktop Management & Web Access Platform",
         nginx_local_desc: "Local NGINX Reverse Proxy & SSL Management",
         nginx_cloud_desc: "Cloud NGINX Reverse Proxy & SSL Management",
+        plesk_desc: "Plesk Obsidian Web Hosting & Server Control Panel",
         smb_soc_desc: "Cybersecurity Operations & Audit Platform",
         smb_index_desc: "High-speed Network Share Indexing & Search Engine",
         erp_desc: "Enterprise Resource Planning System",

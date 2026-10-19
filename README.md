@@ -32,6 +32,7 @@ A modern, minimal web portal for BIO Thailand Group's application ecosystem. Bui
 - **RustDesk UI** - Remote desktop management & web access platform
 - **Local NGINX** - Local NGINX reverse proxy & SSL manager
 - **Cloud NGINX** - Cloud NGINX reverse proxy & SSL manager
+- **Plesk Control** - Plesk Obsidian 18.0.80 web hosting & server control panel
 - **BIO SMB SOC** - SMB cybersecurity audit & operations platform
 - **BIO SMB INDEX** - High-speed network share indexing & search engine
 
