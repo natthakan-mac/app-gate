@@ -1818,20 +1818,20 @@
     .hero-scroll-indicator {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: var(--txt);
       cursor: pointer;
-      padding: 7px 16px 7px 12px;
+      padding: 11px 24px 11px 18px;
       border-radius: 999px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(0, 121, 107, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       margin-top: auto;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       user-select: none;
       position: relative;
       animation: indicatorFloat 3.6s ease-in-out infinite alternate;
@@ -1839,7 +1839,9 @@
     }
 
     [data-theme="dark"] .hero-scroll-indicator {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     @keyframes indicatorFloat {
@@ -1853,48 +1855,52 @@
 
     .hero-scroll-indicator:hover {
       color: var(--title);
-      border-color: var(--card-border) !important;
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(0, 121, 107, 0.25) !important;
       outline: none;
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 28px rgba(0, 121, 107, 0.12), 0 2px 6px rgba(0, 0, 0, 0.03), inset 0 1px 0 #ffffff;
     }
 
     .hero-scroll-indicator:focus,
     .hero-scroll-indicator:focus-visible {
       outline: none;
-      border-color: var(--card-border) !important;
+      border-color: rgba(0, 121, 107, 0.35) !important;
+      box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.15);
     }
 
     [data-theme="dark"] .hero-scroll-indicator:hover {
-      border-color: var(--card-border) !important;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(77, 182, 172, 0.35) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 18px rgba(77, 182, 172, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .hero-scroll-indicator:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
     }
 
     .scroll-mouse-track {
-      width: 15px;
-      height: 22px;
+      width: 18px;
+      height: 27px;
       border: 1.8px solid var(--title);
-      border-radius: 9px;
+      border-radius: 10px;
       display: flex;
       justify-content: center;
-      padding-top: 3px;
+      padding-top: 4px;
       box-sizing: border-box;
       flex-shrink: 0;
-      opacity: 0.85;
-      transition: opacity 0.25s ease;
+      opacity: 0.78;
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
     .hero-scroll-indicator:hover .scroll-mouse-track {
       opacity: 1;
+      transform: translateY(1px);
     }
 
     .scroll-mouse-wheel {
-      width: 2.5px;
-      height: 5px;
+      width: 2.8px;
+      height: 6px;
       background-color: var(--title);
       border-radius: 2px;
       animation: mouseScrollDot 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
@@ -1906,7 +1912,7 @@
         opacity: 1;
       }
       55% {
-        transform: translateY(6px);
+        transform: translateY(8px);
         opacity: 0.15;
       }
       56% {
@@ -1920,39 +1926,18 @@
     }
 
     .scroll-hint-text {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.25px;
       color: var(--txt);
+      opacity: 0.9;
       white-space: nowrap;
-      transition: color 0.25s ease;
+      transition: color 0.25s ease, opacity 0.25s ease;
     }
 
     .hero-scroll-indicator:hover .scroll-hint-text {
       color: var(--title);
-    }
-
-    .scroll-arrow-circle {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--chip);
-      border: 1px solid var(--chip-border);
-      color: var(--title);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      flex-shrink: 0;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .hero-scroll-indicator:hover .scroll-arrow-circle {
-      background: var(--title);
-      border-color: transparent;
-      color: #ffffff;
-      transform: translateY(2px);
-      box-shadow: 0 2px 8px rgba(0, 121, 107, 0.35);
+      opacity: 1;
     }
 
     .apps-section {
@@ -2264,24 +2249,20 @@
 
       .hero-scroll-indicator {
         margin-top: auto;
-        margin-bottom: 10px;
-        padding: 6px 14px 6px 10px;
-        gap: 8px;
+        margin-bottom: 12px;
+        padding: 9px 20px 9px 15px;
+        gap: 10px;
       }
 
       .scroll-hint-text {
-        font-size: 0.76rem;
+        font-size: 0.84rem;
       }
 
       .scroll-mouse-track {
-        width: 14px;
-        height: 20px;
-      }
-
-      .scroll-arrow-circle {
-        width: 20px;
-        height: 20px;
-        font-size: 0.6rem;
+        width: 16px;
+        height: 24px;
+        border-radius: 9px;
+        padding-top: 3px;
       }
 
       .search-shortcut-badge {
@@ -2523,9 +2504,6 @@
           <span class="scroll-mouse-wheel"></span>
         </div>
         <span class="scroll-hint-text" data-i18n="scroll_hint">เลื่อนลงเพื่อดูระบบทั้งหมด</span>
-        <div class="scroll-arrow-circle" aria-hidden="true">
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
       </a>
     </section>
 
