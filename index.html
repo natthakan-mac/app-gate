@@ -1716,6 +1716,96 @@
       min-height: 100svh;
       box-sizing: border-box;
       padding: 20px 0 20px;
+      transition: min-height 0.25s ease, padding 0.25s ease;
+    }
+
+    /* Search Active State: Show results immediately under the search bar with no need to scroll */
+    body.is-searching .hero-landing {
+      min-height: unset !important;
+      height: auto !important;
+      padding-top: 14px !important;
+      padding-bottom: 0 !important;
+      justify-content: flex-start !important;
+    }
+
+    body.is-searching .hero-content {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    body.is-searching .main-header {
+      margin-bottom: 10px !important;
+    }
+
+    body.is-searching .main-header .logo {
+      max-width: 46px !important;
+      margin: 0 auto 6px !important;
+      transition: max-width 0.2s ease, margin 0.2s ease;
+    }
+
+    body.is-searching .main-header h1 {
+      font-size: 1.15rem !important;
+      margin: 0 0 2px !important;
+      line-height: 1.25 !important;
+    }
+
+    body.is-searching .main-header p.lead {
+      display: none !important;
+    }
+
+    body.is-searching .typing-container,
+    body.is-searching .hero-badges-showcase,
+    body.is-searching .hero-scroll-indicator {
+      display: none !important;
+    }
+
+    body.is-searching .search-container {
+      margin: 0 auto 12px !important;
+    }
+
+    body.is-searching .apps-section {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    body.is-searching .section-title {
+      margin: 8px auto 6px !important;
+      animation: none !important;
+    }
+
+    body.is-searching .section-title:first-of-type {
+      margin-top: 0 !important;
+    }
+
+    body.is-searching .links {
+      margin: 6px 0 16px !important;
+    }
+
+    @media (max-width: 767px) {
+      body.is-searching .hero-landing {
+        padding-top: 10px !important;
+      }
+
+      body.is-searching .top-controls {
+        margin-bottom: 2px !important;
+      }
+
+      body.is-searching .main-header {
+        margin-bottom: 8px !important;
+      }
+
+      body.is-searching .main-header .logo {
+        max-width: 40px !important;
+        margin: 0 auto 4px !important;
+      }
+
+      body.is-searching .main-header h1 {
+        font-size: 1.05rem !important;
+      }
+
+      body.is-searching .search-container {
+        margin: 0 auto 8px !important;
+      }
     }
 
     .hero-content {
@@ -2753,7 +2843,7 @@
             <div class="link-description" data-i18n="smb_index_desc">ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง</div>
             <span class="webapp-badge">Web App</span>
           </div>
-          <a href="https://smb-index.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+          <a href="https://liff.line.me/2008894954-2CpZIMEf" target="_blank" rel="noopener noreferrer" class="card-open-btn"
             onclick="event.stopPropagation();">Open</a>
         </div>
       </div>
@@ -3210,7 +3300,7 @@
         <div class="modal-header-text">
           <h2>BIO SMB INDEX</h2>
           <p class="modal-subtitle">High-speed Network Share Indexing & Search Engine</p>
-          <a href="https://smb-index.bioinnotech.co.th/" class="modal-button" target="_blank"
+          <a href="https://liff.line.me/2008894954-2CpZIMEf" class="modal-button" target="_blank"
             rel="noopener noreferrer">Open</a>
         </div>
       </div>
@@ -3703,7 +3793,6 @@
         searchInput.value = keyword;
         filterApps(keyword);
         searchInput.focus();
-        scrollToApps();
       }
     }
 
@@ -3723,13 +3812,19 @@
         searchInput.value = badgeName;
         filterApps(badgeName);
         searchInput.focus();
-        scrollToApps();
       }
     }
 
     // Search and Filtering System
     function filterApps(query) {
       const q = (query || '').trim().toLowerCase();
+      const isSearching = q.length > 0;
+      document.body.classList.toggle('is-searching', isSearching);
+
+      if (isSearching && window.scrollY > 20) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
       const clearBtn = document.getElementById('searchClearBtn');
       const shortcutBadge = document.getElementById('searchShortcutBadge');
       const noResultsEl = document.getElementById('searchNoResults');
@@ -3810,16 +3905,6 @@
         searchInput.addEventListener('input', (e) => {
           const val = e.target.value;
           filterApps(val);
-          // On mobile, automatically slide to apps section if searching
-          if (val.trim().length > 0 && window.innerWidth <= 767) {
-            const appsSection = document.getElementById('appsSection');
-            if (appsSection) {
-              const rect = appsSection.getBoundingClientRect();
-              if (rect.top > 120) {
-                appsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }
-          }
         });
 
         searchInput.addEventListener('keydown', (e) => {
