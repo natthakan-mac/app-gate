@@ -1770,10 +1770,13 @@
     }
 
     @keyframes sparkleGlow {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.7;
         transform: scale(0.95);
       }
+
       50% {
         opacity: 1;
         transform: scale(1.15);
@@ -1803,12 +1806,17 @@
     }
 
     @keyframes blinkCursor {
-      0%, 45% {
+
+      0%,
+      45% {
         opacity: 1;
       }
-      50%, 95% {
+
+      50%,
+      95% {
         opacity: 0;
       }
+
       100% {
         opacity: 1;
       }
@@ -1848,6 +1856,7 @@
       0% {
         transform: translateY(0);
       }
+
       100% {
         transform: translateY(-4px);
       }
@@ -1911,14 +1920,17 @@
         transform: translateY(0);
         opacity: 1;
       }
+
       55% {
         transform: translateY(8px);
         opacity: 0.15;
       }
+
       56% {
         transform: translateY(0);
         opacity: 0;
       }
+
       100% {
         transform: translateY(0);
         opacity: 1;
@@ -1959,8 +1971,8 @@
       overflow: hidden;
       position: relative;
       /* Smooth fade mask at edges */
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%);
       user-select: none;
     }
 
@@ -1999,6 +2011,7 @@
       0% {
         transform: translateX(0);
       }
+
       100% {
         transform: translateX(-50%);
       }
@@ -2008,6 +2021,7 @@
       0% {
         transform: translateX(-50%);
       }
+
       100% {
         transform: translateX(0);
       }
@@ -2050,6 +2064,7 @@
       0% {
         transform: translateY(0);
       }
+
       100% {
         transform: translateY(-4px);
       }
@@ -2070,6 +2085,7 @@
       border-color: rgba(66, 133, 244, 0.35);
       color: #3b82f6;
     }
+
     .badge-appsheet:hover {
       background: rgba(66, 133, 244, 0.22);
       box-shadow: 0 4px 14px rgba(66, 133, 244, 0.3);
@@ -2080,6 +2096,7 @@
       border-color: rgba(13, 183, 237, 0.35);
       color: #0ea5e9;
     }
+
     .badge-docker:hover {
       background: rgba(13, 183, 237, 0.22);
       box-shadow: 0 4px 14px rgba(13, 183, 237, 0.3);
@@ -2090,6 +2107,7 @@
       border-color: rgba(156, 39, 176, 0.35);
       color: #a855f7;
     }
+
     .badge-webapp:hover {
       background: rgba(156, 39, 176, 0.22);
       box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
@@ -2100,6 +2118,7 @@
       border-color: rgba(52, 168, 83, 0.35);
       color: #22c55e;
     }
+
     .badge-thirdparty:hover {
       background: rgba(52, 168, 83, 0.22);
       box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
@@ -2110,6 +2129,7 @@
       border-color: rgba(245, 124, 0, 0.35);
       color: #f97316;
     }
+
     .badge-crm:hover {
       background: rgba(245, 124, 0, 0.22);
       box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
@@ -2120,6 +2140,7 @@
       border-color: rgba(0, 150, 136, 0.35);
       color: #14b8a6;
     }
+
     .badge-stock:hover {
       background: rgba(0, 150, 136, 0.22);
       box-shadow: 0 4px 14px rgba(20, 184, 166, 0.3);
@@ -2130,6 +2151,7 @@
       border-color: rgba(99, 102, 241, 0.35);
       color: #6366f1;
     }
+
     .badge-it:hover {
       background: rgba(99, 102, 241, 0.22);
       box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
@@ -2140,6 +2162,7 @@
       border-color: rgba(236, 72, 153, 0.35);
       color: #ec4899;
     }
+
     .badge-mfg:hover {
       background: rgba(236, 72, 153, 0.22);
       box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
@@ -2383,7 +2406,8 @@
       <div class="hero-content">
         <div class="main-header">
           <img src="icons/logo.svg" alt="BIO Thailand Logo" class="logo" />
-          <h1><span class="brand-title">BIO THAILAND GROUP</span><br><span class="sub-title">Application Portal</span></h1>
+          <h1><span class="brand-title">BIO THAILAND GROUP</span><br><span class="sub-title">Application Portal</span>
+          </h1>
           <p class="lead" data-i18n="lead">ศูนย์รวมระบบแอปพลิเคชันของกลุ่มบริษัท ไบโอ ไทยแลนด์</p>
         </div>
 
@@ -2394,14 +2418,16 @@
               data-i18n-placeholder="search_placeholder" autocomplete="off" spellcheck="false" />
             <div class="search-actions">
               <span class="search-shortcut-badge" id="searchShortcutBadge" title="Keyboard Shortcut">/</span>
-              <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search" onclick="clearSearch()">
+              <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search"
+                onclick="clearSearch()">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
           </div>
 
           <!-- Typing Animated Suggestion Text below search bar -->
-          <div class="typing-container" id="typingContainer" onclick="handleTypingClick()" title="คลิกเพื่อค้นหา / Click to search">
+          <div class="typing-container" id="typingContainer" onclick="handleTypingClick()"
+            title="คลิกเพื่อค้นหา / Click to search">
             <span class="typing-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
             <span class="typing-text" id="typingText"></span>
             <span class="typing-cursor"></span>
@@ -2421,7 +2447,8 @@
               <button class="hero-badge badge-webapp" onclick="filterByBadge('Web App')" title="กรองเว็บแอปพลิเคชัน">
                 <i class="fa-solid fa-globe"></i> Web App
               </button>
-              <button class="hero-badge badge-thirdparty" onclick="filterByBadge('3rd Party')" title="กรองระบบ Third Party">
+              <button class="hero-badge badge-thirdparty" onclick="filterByBadge('3rd Party')"
+                title="กรองระบบ Third Party">
                 <i class="fa-solid fa-cube"></i> 3rd Party
               </button>
               <button class="hero-badge badge-crm" onclick="filterByBadge('CRM')" title="กรองระบบฝ่ายขาย & CRM">
@@ -2441,7 +2468,8 @@
               <button class="hero-badge badge-webapp" onclick="filterByBadge('Web App')" title="กรองเว็บแอปพลิเคชัน">
                 <i class="fa-solid fa-globe"></i> Web App
               </button>
-              <button class="hero-badge badge-thirdparty" onclick="filterByBadge('3rd Party')" title="กรองระบบ Third Party">
+              <button class="hero-badge badge-thirdparty" onclick="filterByBadge('3rd Party')"
+                title="กรองระบบ Third Party">
                 <i class="fa-solid fa-cube"></i> 3rd Party
               </button>
               <button class="hero-badge badge-crm" onclick="filterByBadge('CRM')" title="กรองระบบฝ่ายขาย & CRM">
@@ -2467,7 +2495,8 @@
               <button class="hero-badge badge-mfg" onclick="filterByBadge('ERP')" title="กรองระบบ ERP Next">
                 <i class="fa-solid fa-industry"></i> ERP Next
               </button>
-              <button class="hero-badge badge-webapp" onclick="filterByBadge('RustDesk')" title="กรองระบบ Remote Desktop">
+              <button class="hero-badge badge-webapp" onclick="filterByBadge('RustDesk')"
+                title="กรองระบบ Remote Desktop">
                 <i class="fa-solid fa-desktop"></i> Remote Desktop
               </button>
               <button class="hero-badge badge-thirdparty" onclick="filterByBadge('Plesk')" title="กรองระบบ Plesk">
@@ -2487,7 +2516,8 @@
               <button class="hero-badge badge-mfg" onclick="filterByBadge('ERP')" title="กรองระบบ ERP Next">
                 <i class="fa-solid fa-industry"></i> ERP Next
               </button>
-              <button class="hero-badge badge-webapp" onclick="filterByBadge('RustDesk')" title="กรองระบบ Remote Desktop">
+              <button class="hero-badge badge-webapp" onclick="filterByBadge('RustDesk')"
+                title="กรองระบบ Remote Desktop">
                 <i class="fa-solid fa-desktop"></i> Remote Desktop
               </button>
               <button class="hero-badge badge-thirdparty" onclick="filterByBadge('Plesk')" title="กรองระบบ Plesk">
@@ -2499,7 +2529,8 @@
       </div>
 
       <!-- Slide down to view all apps indicator -->
-      <a href="#appsSection" class="hero-scroll-indicator" id="heroScrollIndicator" onclick="scrollToApps(event)" title="เลื่อนลงเพื่อดูระบบทั้งหมด / Slide down to view all apps">
+      <a href="#appsSection" class="hero-scroll-indicator" id="heroScrollIndicator" onclick="scrollToApps(event)"
+        title="เลื่อนลงเพื่อดูระบบทั้งหมด / Slide down to view all apps">
         <div class="scroll-mouse-track" aria-hidden="true">
           <span class="scroll-mouse-wheel"></span>
         </div>
@@ -2513,246 +2544,251 @@
         <i class="fa-solid fa-magnifying-glass-chart no-results-icon"></i>
         <h3 data-i18n="no_results">ไม่พบแอปพลิเคชันที่ค้นหา</h3>
         <p data-i18n="no_results_desc">ลองค้นหาด้วยชื่อแอป หรือคำสำคัญอื่น</p>
-        <button type="button" class="search-reset-btn" onclick="clearSearch()" data-i18n="clear_search">ล้างการค้นหา</button>
+        <button type="button" class="search-reset-btn" onclick="clearSearch()"
+          data-i18n="clear_search">ล้างการค้นหา</button>
       </div>
 
       <div class="section-title"><i class="fa-solid fa-globe"></i><span data-i18n="general">General</span></div>
-    <div class="links">
-      <div class="link" onclick="openModal('modal9')">
-        <img src="icons/webmail-icon.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Webmail</div>
-          <div class="link-description" data-i18n="webmail_desc">ระบบอีเมลองค์กร</div>
-          <span class="thirdparty-badge">3rd Party</span>
-        </div>
-        <a href="http://webmail.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal10')">
-        <img src="icons/docuseal.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">DocuSeal</div>
-          <div class="link-description" data-i18n="docuseal_desc">ระบบลงนามเอกสารอิเล็กทรอนิกส์</div>
-          <span class="docker-badge">Docker</span>
-        </div>
-        <a href="https://esign.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-    </div>
-
-    <div class="section-title"><i class="fa-solid fa-warehouse"></i><span data-i18n="stock">Stock and Inventory</span>
-    </div>
-    <div class="links links-2col">
-      <div class="link" onclick="openModal('modal1')">
-        <img src="icons/app1-icon.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO IVM</div>
-          <div class="link-description" data-i18n="bio_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค</div>
-          <span class="appsheet-badge">AppSheet</span>
-        </div>
-        <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" target="_blank"
-          rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link link-blue" onclick="openModal('modal2')">
-        <img src="icons/app2-icon.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO Thailand IVM</div>
-          <div class="link-description" data-i18n="bio_th_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค (ไทยแลนด์)</div>
-          <span class="appsheet-badge">AppSheet</span>
-        </div>
-        <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" target="_blank"
-          rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link link-green" onclick="openModal('modal3')">
-        <img src="icons/app3-icon.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO Green World IVM</div>
-          <div class="link-description" data-i18n="bio_green_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค กรีน เวิลด์
+      <div class="links">
+        <div class="link" onclick="openModal('modal9')">
+          <img src="icons/webmail-icon.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Webmail</div>
+            <div class="link-description" data-i18n="webmail_desc">ระบบอีเมลองค์กร</div>
+            <span class="thirdparty-badge">3rd Party</span>
           </div>
-          <span class="appsheet-badge">AppSheet</span>
+          <a href="http://webmail.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" target="_blank"
-          rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal14')">
-        <img src="icons/bio-ams.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO AMS</div>
-          <div class="link-description" data-i18n="bio_ams_desc">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://bio-asset-management.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-    </div>
-
-    <div class="section-title"><i class="fa-solid fa-handshake"></i><span data-i18n="crm">Customer Relation
-        Management</span></div>
-    <div class="links">
-      <div class="link link-orange" onclick="openModal('modal4')">
-        <img src="icons/app4-icon.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO CRM 2.1</div>
-          <div class="link-description" data-i18n="bio_crm_desc">ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์ กรุ๊ป
+        <div class="link" onclick="openModal('modal10')">
+          <img src="icons/docuseal.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">DocuSeal</div>
+            <div class="link-description" data-i18n="docuseal_desc">ระบบลงนามเอกสารอิเล็กทรอนิกส์</div>
+            <span class="docker-badge">Docker</span>
           </div>
-          <span class="appsheet-badge">AppSheet</span>
+          <a href="https://esign.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://www.appsheet.com/start/0291108f-2639-467f-8e61-02af3ed9d0b7" target="_blank"
-          rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
       </div>
 
-      <div class="link link-orange" onclick="openModal('modal11')">
-        <img src="icons/bio-sales-int.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO Sales Intelligence</div>
-          <div class="link-description" data-i18n="bio_sales_int_desc">ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด
-          </div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://bio-sales-int.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
+      <div class="section-title"><i class="fa-solid fa-warehouse"></i><span data-i18n="stock">Stock and Inventory</span>
       </div>
-    </div>
+      <div class="links links-2col">
+        <div class="link" onclick="openModal('modal1')">
+          <img src="icons/app1-icon.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO IVM</div>
+            <div class="link-description" data-i18n="bio_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค</div>
+            <span class="appsheet-badge">AppSheet</span>
+          </div>
+          <a href="https://www.appsheet.com/start/75299b67-062d-4c00-8876-8c878fe3e28c" target="_blank"
+            rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link link-blue" onclick="openModal('modal2')">
+          <img src="icons/app2-icon.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO Thailand IVM</div>
+            <div class="link-description" data-i18n="bio_th_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค (ไทยแลนด์)
+            </div>
+            <span class="appsheet-badge">AppSheet</span>
+          </div>
+          <a href="https://www.appsheet.com/start/a2674db5-644d-46c6-ba0d-8dce61bd6c2c" target="_blank"
+            rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link link-green" onclick="openModal('modal3')">
+          <img src="icons/app3-icon.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO Green World IVM</div>
+            <div class="link-description" data-i18n="bio_green_ivm_desc">ระบบคลังสินค้าบริษัท ไบโอ อินโน เทค กรีน เวิลด์
+            </div>
+            <span class="appsheet-badge">AppSheet</span>
+          </div>
+          <a href="https://www.appsheet.com/newshortcut/f5e35f05-09a6-476f-85cb-97fc015c0694" target="_blank"
+            rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal14')">
+          <img src="icons/bio-ams.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO AMS</div>
+            <div class="link-description" data-i18n="bio_ams_desc">ระบบบริหารจัดการทรัพย์สินองค์กร</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://bio-asset-management.web.app/" target="_blank" rel="noopener noreferrer"
+            class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+      </div>
 
-    <div class="section-title"><i class="fa-solid fa-laptop-code"></i><span data-i18n="it">IT</span></div>
-    <div class="links">
-      <div class="link" onclick="openModal('modal17')">
-        <img src="icons/zabbix.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Zabbix</div>
-          <div class="link-description" data-i18n="zabbix_desc">ระบบตรวจสอบและติดตามสถานะเครือข่ายและเซิร์ฟเวอร์</div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://zabbix.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal18')">
-        <img src="icons/docker.jpg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Local Dockhand</div>
-          <div class="link-description" data-i18n="dockhand_local_desc">ระบบจัดการ Docker Containers ภายในองค์กร</div>
-          <span class="docker-badge">Docker</span>
-        </div>
-        <a href="https://docker.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal19')">
-        <img src="icons/docker.jpg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Cloud Dockhand</div>
-          <div class="link-description" data-i18n="dockhand_cloud_desc">ระบบจัดการ Docker Containers บนคลาวด์ (Oracle)
+      <div class="section-title"><i class="fa-solid fa-handshake"></i><span data-i18n="crm">Customer Relation
+          Management</span></div>
+      <div class="links">
+        <div class="link link-orange" onclick="openModal('modal4')">
+          <img src="icons/app4-icon.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO CRM 2.1</div>
+            <div class="link-description" data-i18n="bio_crm_desc">ระบบจัดการรายงานฝ่ายขาย กลุ่มบริษัท ไบโอ ไทยแลนด์
+              กรุ๊ป
+            </div>
+            <span class="appsheet-badge">AppSheet</span>
           </div>
-          <span class="docker-badge">Docker</span>
+          <a href="https://www.appsheet.com/start/0291108f-2639-467f-8e61-02af3ed9d0b7" target="_blank"
+            rel="noopener noreferrer" class="card-open-btn" onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://oracle.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal20')">
-        <img src="icons/omada-tplink.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Omada TP-Link</div>
-          <div class="link-description" data-i18n="omada_desc">ระบบบริหารจัดการเครือข่ายและ Wi-Fi บนคลาวด์</div>
-          <span class="thirdparty-badge">Third Party</span>
-        </div>
-        <a href="https://omada.tplinkcloud.com" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal21')">
-        <img src="icons/rustdesk.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">RustDesk UI</div>
-          <div class="link-description" data-i18n="rustdesk_desc">ระบบควบคุมและเข้าถึงเครื่องระยะไกล (Remote Desktop)
-          </div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://rdp.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal22')">
-        <img src="icons/npm.jpg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Local NGINX</div>
-          <div class="link-description" data-i18n="nginx_local_desc">ระบบจัดการ Reverse Proxy และ SSL ภายในองค์กร</div>
-          <span class="docker-badge">Docker</span>
-        </div>
-        <a href="http://140.245.119.156:81/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal23')">
-        <img src="icons/npm.jpg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Cloud NGINX</div>
-          <div class="link-description" data-i18n="nginx_cloud_desc">ระบบจัดการ Reverse Proxy และ SSL บนคลาวด์</div>
-          <span class="docker-badge">Docker</span>
-        </div>
-        <a href="https://nginx.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal24')">
-        <img src="icons/plesk.png" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">Plesk Control</div>
-          <div class="link-description" data-i18n="plesk_desc">ระบบจัดการเว็บโฮสติ้งและเซิร์ฟเวอร์ Plesk Obsidian</div>
-          <span class="thirdparty-badge">Third Party</span>
-        </div>
-        <a href="https://thsv21.hostatom.com:8443/login_up.php" target="_blank" rel="noopener noreferrer"
-          class="card-open-btn" onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal15')">
-        <img src="icons/bio-smb-soc.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO SMB SOC</div>
-          <div class="link-description" data-i18n="smb_soc_desc">ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์</div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://smb-audit.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link" onclick="openModal('modal16')">
-        <img src="icons/bio-smb-index.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO SMB INDEX</div>
-          <div class="link-description" data-i18n="smb_index_desc">ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง</div>
-          <span class="webapp-badge">Web App</span>
-        </div>
-        <a href="https://smb-index.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-    </div>
 
-    <div class="section-title"><i class="fa-solid fa-industry"></i><span data-i18n="mfg">Manufacturing</span></div>
-    <div class="links">
-      <div class="link" onclick="openModal('modal8')">
-        <img src="icons/erpnext.webp" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">ERP NEXT</div>
-          <div class="link-description" data-i18n="erp_desc">ระบบบริหารจัดการทรัพยากรองค์กร</div>
-          <span class="docker-badge">Docker</span>
+        <div class="link link-orange" onclick="openModal('modal11')">
+          <img src="icons/bio-sales-int.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO Sales Intelligence</div>
+            <div class="link-description" data-i18n="bio_sales_int_desc">ระบบวิเคราะห์ยอดขาย บริษัท ไบโอ อินโน เทค จำกัด
+            </div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://bio-sales-int.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://next.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
       </div>
-      <div class="link link-green" onclick="openModal('modal12')">
-        <img src="icons/casp-app-ico.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">CASP MA</div>
-          <div class="link-description" data-i18n="casp_desc">ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP</div>
-          <span class="webapp-badge">Web App</span>
+
+      <div class="section-title"><i class="fa-solid fa-laptop-code"></i><span data-i18n="it">IT</span></div>
+      <div class="links">
+        <div class="link" onclick="openModal('modal17')">
+          <img src="icons/zabbix.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Zabbix</div>
+            <div class="link-description" data-i18n="zabbix_desc">ระบบตรวจสอบและติดตามสถานะเครือข่ายและเซิร์ฟเวอร์</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://zabbix.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://casp-ma.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
-          onclick="event.stopPropagation();">Open</a>
-      </div>
-      <div class="link link-blue" onclick="openModal('modal13')">
-        <img src="icons/bio-water-ico.svg" alt="App Icon" class="link-icon">
-        <div class="link-content">
-          <div class="link-name">BIO WPM</div>
-          <div class="link-description" data-i18n="wpm_desc">ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank</div>
-          <span class="webapp-badge">Web App</span>
+        <div class="link" onclick="openModal('modal18')">
+          <img src="icons/docker.jpg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Local Dockhand</div>
+            <div class="link-description" data-i18n="dockhand_local_desc">ระบบจัดการ Docker Containers ภายในองค์กร</div>
+            <span class="docker-badge">Docker</span>
+          </div>
+          <a href="https://docker.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
         </div>
-        <a href="https://water-plant-maintenance.web.app/" target="_blank" rel="noopener noreferrer"
-          class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        <div class="link" onclick="openModal('modal19')">
+          <img src="icons/docker.jpg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Cloud Dockhand</div>
+            <div class="link-description" data-i18n="dockhand_cloud_desc">ระบบจัดการ Docker Containers บนคลาวด์ (Oracle)
+            </div>
+            <span class="docker-badge">Docker</span>
+          </div>
+          <a href="https://oracle.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal20')">
+          <img src="icons/omada-tplink.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Omada TP-Link</div>
+            <div class="link-description" data-i18n="omada_desc">ระบบบริหารจัดการเครือข่ายและ Wi-Fi บนคลาวด์</div>
+            <span class="thirdparty-badge">Third Party</span>
+          </div>
+          <a href="https://omada.tplinkcloud.com" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal21')">
+          <img src="icons/rustdesk.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">RustDesk UI</div>
+            <div class="link-description" data-i18n="rustdesk_desc">ระบบควบคุมและเข้าถึงเครื่องระยะไกล (Remote Desktop)
+            </div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://rdp.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal22')">
+          <img src="icons/npm.jpg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Local NGINX</div>
+            <div class="link-description" data-i18n="nginx_local_desc">ระบบจัดการ Reverse Proxy และ SSL ภายในองค์กร
+            </div>
+            <span class="docker-badge">Docker</span>
+          </div>
+          <a href="http://140.245.119.156:81/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal23')">
+          <img src="icons/npm.jpg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Cloud NGINX</div>
+            <div class="link-description" data-i18n="nginx_cloud_desc">ระบบจัดการ Reverse Proxy และ SSL บนคลาวด์</div>
+            <span class="docker-badge">Docker</span>
+          </div>
+          <a href="https://nginx.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal24')">
+          <img src="icons/plesk.png" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">Plesk Control</div>
+            <div class="link-description" data-i18n="plesk_desc">ระบบจัดการเว็บโฮสติ้งและเซิร์ฟเวอร์ Plesk Obsidian
+            </div>
+            <span class="thirdparty-badge">Third Party</span>
+          </div>
+          <a href="https://thsv21.hostatom.com:8443/login_up.php" target="_blank" rel="noopener noreferrer"
+            class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal15')">
+          <img src="icons/bio-smb-soc.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO SMB SOC</div>
+            <div class="link-description" data-i18n="smb_soc_desc">ระบบตรวจสอบและบริหารจัดการความปลอดภัยไซเบอร์</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://smb-audit.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link" onclick="openModal('modal16')">
+          <img src="icons/bio-smb-index.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO SMB INDEX</div>
+            <div class="link-description" data-i18n="smb_index_desc">ระบบค้นหาและดัชนีไฟล์เครือข่ายความเร็วสูง</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://smb-index.bioinnotech.co.th/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
       </div>
-    </div>
+
+      <div class="section-title"><i class="fa-solid fa-industry"></i><span data-i18n="mfg">Manufacturing</span></div>
+      <div class="links">
+        <div class="link" onclick="openModal('modal8')">
+          <img src="icons/erpnext.webp" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">ERP NEXT</div>
+            <div class="link-description" data-i18n="erp_desc">ระบบบริหารจัดการทรัพยากรองค์กร</div>
+            <span class="docker-badge">Docker</span>
+          </div>
+          <a href="https://next.bioinnotech.co.th" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link link-green" onclick="openModal('modal12')">
+          <img src="icons/casp-app-ico.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">CASP MA</div>
+            <div class="link-description" data-i18n="casp_desc">ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://casp-ma.web.app/" target="_blank" rel="noopener noreferrer" class="card-open-btn"
+            onclick="event.stopPropagation();">Open</a>
+        </div>
+        <div class="link link-blue" onclick="openModal('modal13')">
+          <img src="icons/bio-water-ico.svg" alt="App Icon" class="link-icon">
+          <div class="link-content">
+            <div class="link-name">BIO WPM</div>
+            <div class="link-description" data-i18n="wpm_desc">ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank</div>
+            <span class="webapp-badge">Web App</span>
+          </div>
+          <a href="https://water-plant-maintenance.web.app/" target="_blank" rel="noopener noreferrer"
+            class="card-open-btn" onclick="event.stopPropagation();">Open</a>
+        </div>
+      </div>
     </div> <!-- Close #appsSection -->
   </div> <!-- Close .container -->
 
@@ -3487,7 +3523,7 @@
         casp_desc: "ระบบจัดการและตรวจสอบสถานะการทำงานในกระบวนการ CASP",
         wpm_desc: "ระบบบริหารจัดการและซ่อมบำรุง BIO Water Tank",
         help_btn: "ช่วยเหลือ",
-        footer: "© 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>ITDS (Information Technology & Digital Solutions)<br>ฝ่ายเทคโนโลยีสารสนเทศและบริการดิจิทัล",
+        footer: "© 2025 BIO Thailand Group. สงวนลิขสิทธิ์.<br>ITDS<br>ฝ่ายเทคโนโลยีสารสนเทศและบริการดิจิทัล",
         help_title: "วิธีการใช้งาน",
         help_desc: "แอปที่มีป้าย <span style=\"color: #4285F4; font-weight: 600;\">AppSheet</span> จำเป็นต้องติดตั้งแอป AppSheet ในอุปกรณ์ของคุณก่อน และคุณต้องได้รับการมอบหมายสิทธิ์จากผู้ดูแลระบบเพื่อเข้าสู่ระบบด้วยบัญชี Google ของคุณ",
         contact_title: "ติดต่อสอบถาม",
@@ -3526,7 +3562,7 @@
         casp_desc: "CASP Management & Maintenance System",
         wpm_desc: "BIO Water Tank Management & Maintenance System",
         help_btn: "Help",
-        footer: "© 2025 BIO Thailand Group. All rights reserved.<br>ITDS (Information Technology & Digital Solutions)<br>Information Technology & Digital Solutions Department",
+        footer: "© 2025 BIO Thailand Group. All rights reserved.<br>Information Technology & Digital Solutions Department",
         help_title: "How to Use",
         help_desc: "Apps with the <span style=\"color: #4285F4; font-weight: 600;\">AppSheet</span> badge require the AppSheet app installed on your device, and you must be granted access by an administrator using your Google account.",
         contact_title: "Contact Us",
